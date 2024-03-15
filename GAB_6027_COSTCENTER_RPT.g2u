@@ -1,0 +1,1123 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.F_ExpenseRpt..Create(BaseForm)
+Gui.F_ExpenseRpt..Caption("Expense / Cost Center Report")
+Gui.F_ExpenseRpt..Size(19140,10710)
+Gui.F_ExpenseRpt..MinX(0)
+Gui.F_ExpenseRpt..MinY(0)
+Gui.F_ExpenseRpt..Position(0,0)
+Gui.F_ExpenseRpt..BackColor(-2147483633)
+Gui.F_ExpenseRpt..MousePointer(0)
+Gui.F_ExpenseRpt..Sizeable(False)
+Gui.F_ExpenseRpt..Event(UnLoad,Unload)
+Gui.F_ExpenseRpt..AlwaysOnTop(False)
+Gui.F_ExpenseRpt..FontName("Tahoma")
+Gui.F_ExpenseRpt..FontSize(8.25)
+Gui.F_ExpenseRpt..ControlBox(True)
+Gui.F_ExpenseRpt..MaxButton(True)
+Gui.F_ExpenseRpt..MinButton(True)
+Gui.F_ExpenseRpt..Moveable(True)
+Gui.F_ExpenseRpt..ShowInTaskBar(True)
+Gui.F_ExpenseRpt..TitleBar(True)
+Gui.F_ExpenseRpt.picGSSLogo.Create(PictureBox)
+Gui.F_ExpenseRpt.picGSSLogo.Size(4125,960)
+Gui.F_ExpenseRpt.picGSSLogo.Position(90,45)
+Gui.F_ExpenseRpt.picGSSLogo.Enabled(True)
+Gui.F_ExpenseRpt.picGSSLogo.Visible(True)
+Gui.F_ExpenseRpt.picGSSLogo.Zorder(0)
+Gui.F_ExpenseRpt.tab1.Create(Tab)
+Gui.F_ExpenseRpt.tab1.Size(18795,9105)
+Gui.F_ExpenseRpt.tab1.Position(90,1200)
+Gui.F_ExpenseRpt.tab1.FontSize(9)
+Gui.F_ExpenseRpt.tab1.Enabled(True)
+Gui.F_ExpenseRpt.tab1.Visible(True)
+Gui.F_ExpenseRpt.tab1.Zorder(0)
+Gui.F_ExpenseRpt.tab1.FontName("Tahoma")
+Gui.F_ExpenseRpt.tab1.Tabs(2)
+Gui.F_ExpenseRpt.tab1.SetTab(0)
+Gui.F_ExpenseRpt.tab1.Caption("Monthly")
+Gui.F_ExpenseRpt.tab1.SetTab(1)
+Gui.F_ExpenseRpt.tab1.Caption("Year To Date")
+Gui.F_ExpenseRpt.GsGCYTD.Create(GsGridControl)
+Gui.F_ExpenseRpt.GsGCYTD.Size(18525,8100)
+Gui.F_ExpenseRpt.GsGCYTD.Position(75,555)
+Gui.F_ExpenseRpt.GsGCYTD.Parent("tab1",1)
+Gui.F_ExpenseRpt.GsGCYTD.Enabled(True)
+Gui.F_ExpenseRpt.GsGCYTD.Visible(True)
+Gui.F_ExpenseRpt.GsGCYTD.Zorder(0)
+Gui.F_ExpenseRpt.cmdExport2.Create(Button)
+Gui.F_ExpenseRpt.cmdExport2.Size(1590,405)
+Gui.F_ExpenseRpt.cmdExport2.Position(75,75)
+Gui.F_ExpenseRpt.cmdExport2.Parent("tab1",1)
+Gui.F_ExpenseRpt.cmdExport2.Caption("Export Grid")
+Gui.F_ExpenseRpt.cmdExport2.FontSize(9)
+Gui.F_ExpenseRpt.cmdExport2.Event(Click,ExportYTD)
+Gui.F_ExpenseRpt.cmdExport2.Enabled(True)
+Gui.F_ExpenseRpt.cmdExport2.Visible(True)
+Gui.F_ExpenseRpt.cmdExport2.Zorder(0)
+Gui.F_ExpenseRpt.cmdExport2.FontName("Tahoma")
+Gui.F_ExpenseRpt.lbl1.Create(Label,"Period:",True,690,255,0,75,165,True,0,"Arial",9,-2147483633,0)
+Gui.F_ExpenseRpt.lbl1.Parent("tab1",0)
+Gui.F_ExpenseRpt.lbl1.BorderStyle(0)
+Gui.F_ExpenseRpt.cmdExport1.Create(Button)
+Gui.F_ExpenseRpt.cmdExport1.Size(1590,405)
+Gui.F_ExpenseRpt.cmdExport1.Position(7350,90)
+Gui.F_ExpenseRpt.cmdExport1.Parent("tab1",0)
+Gui.F_ExpenseRpt.cmdExport1.Caption("Export Grid")
+Gui.F_ExpenseRpt.cmdExport1.FontSize(9)
+Gui.F_ExpenseRpt.cmdExport1.Event(Click,ExportPeriod)
+Gui.F_ExpenseRpt.cmdExport1.Enabled(True)
+Gui.F_ExpenseRpt.cmdExport1.Visible(True)
+Gui.F_ExpenseRpt.cmdExport1.Zorder(0)
+Gui.F_ExpenseRpt.cmdExport1.FontName("Tahoma")
+Gui.F_ExpenseRpt.lblPeriod.Create(Label,"Label",True,465,225,0,3705,180,True,0,"Arial",9,-2147483633,0)
+Gui.F_ExpenseRpt.lblPeriod.Parent("tab1",0)
+Gui.F_ExpenseRpt.lblPeriod.BorderStyle(0)
+Gui.F_ExpenseRpt.GsGCPeriod.Create(GsGridControl)
+Gui.F_ExpenseRpt.GsGCPeriod.Size(18525,8100)
+Gui.F_ExpenseRpt.GsGCPeriod.Position(75,555)
+Gui.F_ExpenseRpt.GsGCPeriod.Parent("tab1",0)
+Gui.F_ExpenseRpt.GsGCPeriod.Enabled(True)
+Gui.F_ExpenseRpt.GsGCPeriod.Visible(True)
+Gui.F_ExpenseRpt.GsGCPeriod.Zorder(0)
+Gui.F_ExpenseRpt.ddlPeriod.Create(DropDownList)
+Gui.F_ExpenseRpt.ddlPeriod.Size(960,300)
+Gui.F_ExpenseRpt.ddlPeriod.Position(840,75)
+Gui.F_ExpenseRpt.ddlPeriod.Parent("tab1",0)
+Gui.F_ExpenseRpt.ddlPeriod.FontSize(9)
+Gui.F_ExpenseRpt.ddlPeriod.Event(Click,ddlPeriod_Change)
+Gui.F_ExpenseRpt.ddlPeriod.Enabled(True)
+Gui.F_ExpenseRpt.ddlPeriod.Visible(True)
+Gui.F_ExpenseRpt.ddlPeriod.Zorder(0)
+Gui.F_ExpenseRpt.ddlPeriod.FontName("Tahoma")
+Gui.F_ExpenseRpt.ddlPeriodTo.Create(DropDownList)
+Gui.F_ExpenseRpt.ddlPeriodTo.Enabled(True)
+Gui.F_ExpenseRpt.ddlPeriodTo.Visible(True)
+Gui.F_ExpenseRpt.ddlPeriodTo.Zorder(0)
+Gui.F_ExpenseRpt.ddlPeriodTo.Size(960,300)
+Gui.F_ExpenseRpt.ddlPeriodTo.Position(2520,90)
+Gui.F_ExpenseRpt.ddlPeriodTo.FontName("Tahoma")
+Gui.F_ExpenseRpt.ddlPeriodTo.FontSize(9)
+Gui.F_ExpenseRpt.ddlPeriodTo.Parent("tab1",0)
+Gui.F_ExpenseRpt.ddlPeriodTo.Event(Click,ddlPeriod_Change)
+Gui.F_ExpenseRpt.lblPeriod2.Create(Label,"To",True,210,225,0,2025,165,True,0,"Arial",9,-2147483633,0)
+Gui.F_ExpenseRpt.lblPeriod2.BorderStyle(0)
+Gui.F_ExpenseRpt.lblPeriod2.Parent("tab1",0)
+Gui.F_ExpenseRpt.lbl2.Create(Label,"Report Name",True,1935,255,0,7455,105,True,0,"Arial",9,-2147483633,0)
+Gui.F_ExpenseRpt.lbl2.BorderStyle(0)
+Gui.F_ExpenseRpt.ddlReport.Create(DropDownList)
+Gui.F_ExpenseRpt.ddlReport.Size(4050,345)
+Gui.F_ExpenseRpt.ddlReport.Position(7485,345)
+Gui.F_ExpenseRpt.ddlReport.FontSize(9)
+Gui.F_ExpenseRpt.ddlReport.Enabled(True)
+Gui.F_ExpenseRpt.ddlReport.Visible(True)
+Gui.F_ExpenseRpt.ddlReport.Zorder(0)
+Gui.F_ExpenseRpt.ddlReport.FontName("Tahoma")
+Gui.F_ExpenseRpt.cmdRefresh.Create(Button)
+Gui.F_ExpenseRpt.cmdRefresh.Size(1095,600)
+Gui.F_ExpenseRpt.cmdRefresh.Position(11790,105)
+Gui.F_ExpenseRpt.cmdRefresh.Caption("REFRESH")
+Gui.F_ExpenseRpt.cmdRefresh.Event(Click,cmdRefresh_Click)
+Gui.F_ExpenseRpt.cmdRefresh.Enabled(True)
+Gui.F_ExpenseRpt.cmdRefresh.Visible(True)
+Gui.F_ExpenseRpt.cmdRefresh.Zorder(0)
+Gui.F_ExpenseRpt.cmdRefresh.FontName("Tahoma")
+Gui.F_ExpenseRpt.cmdRefresh.FontSize(8.25)
+Gui.F_ExpenseRpt.lbl3.Create(Label,"Fiscal Year",True,1080,255,0,6045,105,True,0,"Arial",9,-2147483633,0)
+Gui.F_ExpenseRpt.lbl3.BorderStyle(0)
+Gui.F_ExpenseRpt.ddlYear.Create(DropDownList)
+Gui.F_ExpenseRpt.ddlYear.Size(930,345)
+Gui.F_ExpenseRpt.ddlYear.Position(6075,345)
+Gui.F_ExpenseRpt.ddlYear.FontSize(9)
+Gui.F_ExpenseRpt.ddlYear.Enabled(True)
+Gui.F_ExpenseRpt.ddlYear.Visible(True)
+Gui.F_ExpenseRpt.ddlYear.Zorder(0)
+Gui.F_ExpenseRpt.ddlYear.FontName("Tahoma")
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+V.Local.bExist.Declare
+V.Local.sGSSLogo.Declare
+V.Local.sIconPath.Declare
+V.Local.sRet.Declare
+V.Local.sSQL.Declare
+
+F.Intrinsic.String.Concat(V.Caller.GlobalDir,"\ART\gss2.ico",V.Local.sIconPath)
+F.Intrinsic.String.Concat(V.Caller.GlobalDir,"\ART\GAB_GSS_Logo_Green_Dash.png",V.Local.sGSSLogo)
+
+Gui.F_ExpenseRpt.picGSSLogo.Picture(V.Local.sGSSLogo)
+Gui.F_ExpenseRpt..Icon(V.Local.sIconPath)
+
+F.ODBC.Connection!conx.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass,120)
+
+'Check if table exists
+F.ODBC.Connection!conx.TableExists("INA_EXPENSE_RPT_HEAD",V.Local.bExist)
+F.Intrinsic.Control.If(V.Local.bExist,=,False)
+	F.Intrinsic.UI.Msgbox("Please setup the expense/ cost center report","Expense Cost Center [APAC]")
+	F.Intrinsic.Control.CallSub(unload)
+F.Intrinsic.Control.EndIf
+
+F.Data.DataTable.CreateFromSQL("dtRpt","Conx","select ID, rpt_name as Name, total_cols as TotalColumn from ina_expense_rpt_head order by id",True)
+F.Intrinsic.Control.If(V.DataTable.dtRpt.RowCount,=,0)
+	'Check if report has been setup
+	F.Intrinsic.UI.Msgbox("Please setup the expense/ cost center report","Expense Cost Center [APAC]")
+	F.Intrinsic.Control.CallSub(unload)
+F.Intrinsic.Control.Else
+	'Check if fiscal calendar has ever been setup
+	F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst","select distinct(start_year) as Fiscal, start_year as Year from v_gl_calendar order by start_year desc")
+	F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,True)
+		F.Intrinsic.UI.Msgbox("Please setup fiscal calendar from General Ledger > Administration > Calendar Period Maintenance","Expense Cost Center [APAC]")
+		F.ODBC.conx!rst.Close
+		F.Intrinsic.Control.CallSub(unload)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conx!rst.Close
+	F.Data.Dictionary.CreateFromSQL("Fiscal","Conx","select distinct(start_year) as Fiscal, start_year as Year from v_gl_calendar order by start_year desc",4)
+	Gui.F_ExpenseRpt.ddlYear.AddItems("Dictionary","Fiscal")
+	F.Data.Dictionary.Close("Fiscal")
+	'Check if fiscal calendar for today's date has been setup
+	F.Intrinsic.Date.GLPeriodFromDate(V.Ambient.Date,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,=,"***NONE***")
+		F.Intrinsic.UI.Msgbox("Please setup fiscal calendar for the current fiscal year from General Ledger > Administration > Calendar Period Maintenance","Expense Cost Center [APAC]")
+		F.Intrinsic.Control.CallSub(unload)
+	F.Intrinsic.Control.EndIf
+	'Set the selected accounting period to be last month if it's not the 1st period of the fiscal year
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.F_ExpenseRpt.ddlYear.Text(V.Local.sRet(1).Trim)
+	F.Intrinsic.Control.CallSub(getglperiods)
+	F.Data.Dictionary.CreateFromDataTable("Rpt","dtRpt","ID","Name",4)
+	Gui.F_ExpenseRpt.ddlReport.AddItems("Dictionary","Rpt")
+	F.Data.Dictionary.Close("Rpt")
+	F.Intrinsic.Control.If(V.DataTable.dtRpt.RowCount,=,1)
+		Gui.F_ExpenseRpt.ddlReport.Text(V.DataTable.dtRpt(0).Name!FieldValTrim)
+		Gui.F_ExpenseRpt.ddlReport.Enabled(False)
+		F.Intrinsic.Control.CallSub(loadytd)
+		F.Intrinsic.Control.CallSub(ddlperiod_change)
+	F.Intrinsic.Control.Else
+		Gui.F_ExpenseRpt.tab1.Enabled(False)
+	F.Intrinsic.Control.EndIf
+	Gui.F_ExpenseRpt..Show
+F.Intrinsic.Control.EndIf
+Program.Sub.Main.End
+
+Program.Sub.Unload.Start
+F.Intrinsic.Control.If(V.DataTable.dtRpt.Exists,=,True)
+	F.Data.DataTable.Close("dtRpt")
+F.Intrinsic.Control.EndIf
+F.ODBC.Connection!conx.Close
+F.Intrinsic.Control.End
+
+Program.Sub.Unload.End
+
+Program.Sub.GetGLPeriods.Start
+V.Local.i1.Declare
+V.Local.iCurrentYear.Declare
+V.Local.iPeriod.Declare
+V.Local.iSelectedYear.Declare
+V.Local.sBegDate.Declare
+V.Local.sEndDate.Declare
+V.Local.sPeriod.Declare
+V.Local.sRet.Declare
+V.Local.sSQL.Declare
+
+V.Local.iSelectedYear.Set(V.Screen.F_ExpenseRpt!ddlYear.Text)
+F.Intrinsic.Date.GLPeriodFromDate(V.Ambient.Date,V.Local.sRet)
+F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+V.Local.iCurrentYear.Set(V.Local.sRet(1))
+
+F.Intrinsic.Control.If(V.Local.iSelectedYear,=,V.Local.iCurrentYear)
+	F.Intrinsic.Math.ConvertToLong(V.Local.sRet(0),V.Local.iPeriod)
+F.Intrinsic.Control.ElseIf(V.Local.iSelectedYear,<,V.Local.iCurrentYear)
+	V.Local.iPeriod.Set(12)
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.Msgbox("The selected fiscal year is in the future","Expense Cost Center [APAC]")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+'Generate periods in dropdown for the selected fiscal year
+Gui.F_ExpenseRpt.ddlPeriod.ClearItems
+Gui.F_ExpenseRpt.ddlPeriodTo.ClearItems
+F.Intrinsic.Control.For(V.Local.i1,1,V.Local.iPeriod,1)
+	F.Intrinsic.String.LPad(V.Local.i1,"0",2,V.Local.sPeriod)
+	Gui.F_ExpenseRpt.ddlPeriod.AddItem(V.Local.sPeriod.Trim)
+	Gui.F_ExpenseRpt.ddlPeriodTo.AddItem(V.Local.sPeriod.Trim)
+F.Intrinsic.Control.Next(V.Local.i1)
+
+F.Intrinsic.Control.If(V.Local.iSelectedYear,=,V.Local.iCurrentYear)
+	F.Intrinsic.Control.If(V.Local.iPeriod,>,1)
+		F.Intrinsic.Math.Sub(V.Local.iPeriod,1,V.Local.iPeriod)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+F.Intrinsic.String.LPad(V.Local.iPeriod,"0",2,V.Local.sPeriod)
+Gui.F_ExpenseRpt.ddlPeriod.Text(V.Local.sPeriod.Trim)
+Gui.F_ExpenseRpt.ddlPeriodTo.Text(V.Local.sPeriod.Trim)
+	
+F.Intrinsic.String.Build("select beg_date, end_date from v_gl_calendar where start_year = '{0}' and period = '{1}'",V.Local.iSelectedYear,V.Local.sPeriod.Trim,V.Local.sSQL)
+F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+F.Intrinsic.String.Format(V.ODBC.conx!rst.FieldVal!beg_date,"D MMM YYYY",V.Local.sBegDate)
+F.Intrinsic.String.Format(V.ODBC.conx!rst.FieldVal!end_date,"D MMM YYYY",V.Local.sEndDate)
+F.Intrinsic.String.Build("({0} - {1})",V.Local.sBegDate.Trim,V.Local.sEndDate.Trim,V.Local.sPeriod)
+Gui.F_ExpenseRpt.lblPeriod.Caption(V.Local.sPeriod)
+Program.Sub.GetGLPeriods.End
+
+Program.Sub.LoadYTD.Start
+V.Local.dBegDate.Declare(Date)
+V.Local.dEndDate.Declare(Date)
+V.Local.fBegBal.Declare
+V.Local.fTemp.Declare
+V.Local.fTotalCell.Declare
+V.Local.fTransSum.Declare
+V.Local.i1.Declare
+V.Local.i2.Declare
+V.Local.i3.Declare
+V.Local.iCurrentYear.Declare
+V.Local.iEndCol.Declare
+V.Local.iFormula.Declare
+V.Local.iParentheses.Declare
+V.Local.iPrev.Declare
+V.Local.iRow.Declare
+V.Local.iSelectedYear.Declare
+V.Local.iStartCol.Declare
+V.Local.sColumn.Declare
+V.Local.sConstant.Declare
+V.Local.sFilter.Declare
+V.Local.sFirstChar.Declare
+V.Local.sGL.Declare
+V.Local.sMessage.Declare
+V.Local.sOperator1.Declare
+V.Local.sOperator2.Declare
+V.Local.sReport.Declare
+V.Local.sRet.Declare
+V.Local.sRowVal.Declare
+V.Local.sSQL.Declare
+
+Gui.F_ExpenseRpt.GsGCYTD.visible(False)
+
+V.Local.sReport.Set(V.Screen.F_ExpenseRpt!ddlReport.Text)
+F.Intrinsic.String.Build("Name = '{0}'",V.Local.sReport.Trim,V.Local.sFilter)
+F.Data.DataTable.Select("dtRpt",V.Local.sFilter,V.Local.sReport)
+
+F.Intrinsic.Control.If(V.DataTable.dtColInfo.Exists,=,True)
+	F.Data.DataTable.Close("dtColInfo")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.String.Build("select rpt_id as ID, col_no as Col, col_name as Value, col_flag as Flag from INA_EXPENSE_RPT_COLS where rpt_id = {0} order by col_no",V.DataTable.dtRpt(V.Local.sReport).ID!FieldValLong,V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtColInfo","Conx",V.Local.sSQL,True)
+
+F.Intrinsic.Control.If(V.DataTable.dtYTD.Exists,=,True)
+	F.Data.DataTable.Close("dtYTD")
+F.Intrinsic.Control.EndIf
+
+'GL Period Check
+V.Local.iSelectedYear.Set(V.Screen.F_ExpenseRpt!ddlYear.Text)
+F.Intrinsic.Date.GLPeriodFromDate(V.Ambient.Date,V.Local.sRet)
+F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+V.Local.iCurrentYear.Set(V.Local.sRet(1))
+F.Intrinsic.String.Build("select beg_date from v_gl_calendar where start_year = '{0}' and period = '01'",V.Local.iSelectedYear,V.Local.sSQL)
+F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+V.Local.dBegDate.Set(V.ODBC.conx!rst.FieldVal!beg_date)
+F.ODBC.conx!rst.Close
+
+F.Intrinsic.String.Build("Loading Year To Date for {0}",V.Local.iSelectedYear,V.Local.sRowVal)
+F.Intrinsic.UI.InvokeWaitDialog(V.Local.sRowVal,"Expense Cost Center [APAC]")
+
+F.Intrinsic.Control.If(V.Local.iSelectedYear,=,V.Local.iCurrentYear)
+	V.Local.dEndDate.Set(V.Ambient.Date)
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Build("select end_date from v_gl_calendar where start_year = '{0}' and period = '12'",V.Local.iSelectedYear,V.Local.sSQL)
+	F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+	V.Local.dEndDate.Set(V.ODBC.conx!rst.FieldVal!end_date)
+	F.ODBC.conx!rst.Close
+F.Intrinsic.Control.EndIf
+
+'Reset the grid
+F.Data.DataTable.Create("dtYTD",True)
+F.Data.DataTable.AddColumn("dtYTD","No","Long")
+F.Data.DataTable.AddColumn("dtYTD","Title","String")
+F.Intrinsic.Control.For(V.Local.i1,1,V.DataTable.dtRpt(V.Local.sReport).TotalColumn!FieldValLong,1)
+	F.Intrinsic.String.Concat("Col",V.Local.i1,V.Local.sColumn)
+	F.Data.DataTable.AddColumn("dtYTD",V.Local.sColumn.Trim,"Float")
+F.Intrinsic.Control.Next(V.Local.i1)
+
+'Retrieve grid data for an existing report
+F.Intrinsic.Control.If(V.DataTable.dtRow.Exists,=,True)
+	F.Data.DataTable.Close("dtRow")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.String.Build("select row_no, col_value from INA_EXPENSE_RPT_ROWS where rpt_id = {0} and col_no = 0 order by row_no",V.DataTable.dtRpt(V.Local.sReport).ID!FieldValLong,V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtRow","conx",V.Local.sSQL,True)
+F.Intrinsic.Control.If(V.DataTable.dtRow.RowCount,>,0)
+	F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtRow.RowCount--,1)
+		F.Data.DataTable.AddRow("dtYTD","No",V.DataTable.dtRow(V.Local.i1).row_no!FieldValLong,"Title",V.DataTable.dtRow(V.Local.i1).col_value!FieldValTrim)
+	F.Intrinsic.Control.Next(V.Local.i1)
+
+	F.Intrinsic.Control.For(V.Local.i1,1,V.DataTable.dtRpt(V.Local.sReport).TotalColumn!FieldValLong,1)
+		F.Intrinsic.String.Build("Col = {0}",V.Local.i1,V.Local.sFilter)
+		F.Data.DataTable.Select("dtColInfo",V.Local.sFilter,V.Local.sRet)
+		V.Local.iFormula.Set(V.DataTable.dtColInfo(V.Local.sRet).Flag!FieldValLong)
+		F.Intrinsic.String.Concat("Col",V.Local.i1,V.Local.sColumn)
+		F.Intrinsic.String.Build("Loading Year To Date data for column: {0}",V.DataTable.dtColInfo(V.Local.sRet).Value!FieldValTrim,V.Local.sMessage)
+		F.Intrinsic.UI.ChangeWaitStatus(V.Local.sMessage,V.Local.i1,1,V.DataTable.dtRpt(V.Local.sReport).TotalColumn!FieldValLong)
+		F.Intrinsic.Control.For(V.Local.i2,0,V.DataTable.dtYTD.RowCount--,1)
+			
+			F.Intrinsic.Math.Add(V.Local.i2,1,V.Local.iRow)
+			F.Intrinsic.String.Build("Loading Year To Date data for column: {0}{1}Row {2}",V.DataTable.dtColInfo(V.Local.sRet).Value!FieldValTrim,V.Ambient.NewLine,V.Local.iRow,V.Local.sMessage)
+			F.Intrinsic.UI.ChangeWaitStatus(V.Local.sMessage,V.Local.iRow,1,V.DataTable.dtYTD.RowCount)
+			F.Intrinsic.String.Build("select col_value from INA_EXPENSE_RPT_ROWS where rpt_id = {0} and row_no = {1} and col_no = {2}",V.DataTable.dtRpt(V.Local.sReport).ID!FieldValLong,V.DataTable.dtYTD(V.Local.i2).No!FieldValLong,V.Local.i1,V.Local.sSQL)
+			F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+			V.Local.sRowVal.Set(V.ODBC.conx!rst.FieldValTrim!col_value)
+			F.ODBC.conx!rst.Close
+			F.Intrinsic.Control.If(V.Local.iFormula,=,0)
+				'Retrieve YTD for GL account only
+				F.Intrinsic.Control.CallSub(GLAccountYTD,"sGL",V.Local.sRowVal.Trim,"iYear",V.Local.iSelectedYear,"BegDate",V.Local.dBegDate,"EndDate",V.Local.dEndDate)
+				F.Data.DataTable.SetValue("dtYTD",V.Local.i2,V.Local.sColumn,V.Args.fTotal)
+			F.Intrinsic.Control.Else
+				'Retrieve YTD for formula
+				F.Intrinsic.String.Split(V.Local.sRowVal,"|",V.Local.sRowVal)
+				V.Local.fTotalCell.Set(0)
+				V.Local.fTemp.Set(0)
+				V.Local.iParentheses.Set(0)
+				F.Intrinsic.Control.For(V.Local.i3,1,V.Local.sRowVal.UBound,1)
+					F.Intrinsic.Control.If(V.Local.i3,=,1)
+						'1st variable
+						F.Intrinsic.String.Left(V.Local.sRowVal(V.Local.i3).Trim,1,V.Local.sFirstChar)
+						F.Intrinsic.Control.If(V.Local.sFirstChar,=,"(")
+							V.Local.iParentheses.Set(1)
+							V.Local.sOperator1.Set("=")
+						F.Intrinsic.Control.ElseIf(V.Local.sFirstChar,=,"[")
+							F.Intrinsic.String.Replace(V.Local.sRowVal(V.Local.i3),"[","",V.Local.sGL)
+							F.Intrinsic.String.Replace(V.Local.sGL,"]","",V.Local.sGL)
+							F.Intrinsic.String.Left(V.Local.sGL.Trim,1,V.Local.sFirstChar)
+							F.Intrinsic.Control.If(V.Local.sFirstChar,=,"!")
+								F.Intrinsic.String.Replace(V.Local.sGL,"!","",V.Local.sGL)
+								F.Intrinsic.Control.CallSub(GLAccountYTD,"sGL",V.Local.sGL.Trim,"iYear",V.Local.iSelectedYear,"BegDate",V.Local.dBegDate,"EndDate",V.Local.dEndDate)
+								F.Intrinsic.Math.Mult(-1,V.Args.fTotal,V.Local.fTotalCell)
+							F.Intrinsic.Control.Else
+								F.Intrinsic.Control.CallSub(GLAccountYTD,"sGL",V.Local.sGL.Trim,"iYear",V.Local.iSelectedYear,"BegDate",V.Local.dBegDate,"EndDate",V.Local.dEndDate)
+								V.Local.fTotalCell.Set(V.Args.fTotal)
+							F.Intrinsic.Control.EndIf
+						F.Intrinsic.Control.ElseIf(V.Local.sFirstChar,=,"<")
+							F.Intrinsic.String.Replace(V.Local.sRowVal(V.Local.i3),"<","",V.Local.sConstant)
+							F.Intrinsic.String.Replace(V.Local.sConstant,">","",V.Local.sConstant)
+							F.Intrinsic.String.Left(V.Local.sConstant.Trim,1,V.Local.sFirstChar)
+							F.Intrinsic.Control.If(V.Local.sFirstChar,=,"!")
+								F.Intrinsic.String.Replace(V.Local.sConstant,"!","",V.Local.sConstant)
+								F.Intrinsic.Math.ConvertToFloat(V.Local.sConstant,V.Local.fTotalCell)
+								F.Intrinsic.Math.Mult(-1,V.Local.fTotalCell,V.Local.fTotalCell)
+							F.Intrinsic.Control.Else
+								F.Intrinsic.Math.ConvertToFloat(V.Local.sConstant,V.Local.fTotalCell)
+							F.Intrinsic.Control.EndIf
+						F.Intrinsic.Control.ElseIf(V.Local.sFirstChar,=,"#")
+							F.Intrinsic.Math.Sub(V.Local.i1,1,V.Local.iEndCol)
+							F.Intrinsic.Control.CallSub(calculaterowsum,"iEnd",V.Local.iEndCol,"iYTD",1,"iRow",V.DataTable.dtYTD(V.Local.i2).No!FieldValLong)
+							V.Local.fTotalCell.Set(V.Args.fSum)
+'							F.Intrinsic.Math.Add(V.Local.i1,1,V.Local.iStartCol)
+						F.Intrinsic.Control.EndIf
+					F.Intrinsic.Control.Else
+						'2nd variable etc
+						F.Intrinsic.Control.If(V.Local.iParentheses,=,0)
+							'No Parentheses
+							'If it's an operator sign, set the operator sign
+							F.Intrinsic.Control.If(V.Local.sRowVal(V.Local.i3).Trim,=,"+")
+								V.Local.sOperator1.Set("+")
+							F.Intrinsic.Control.ElseIf(V.Local.sRowVal(V.Local.i3).Trim,=,"-")
+								V.Local.sOperator1.Set("-")
+							F.Intrinsic.Control.ElseIf(V.Local.sRowVal(V.Local.i3).Trim,=,"*")
+								V.Local.sOperator1.Set("*")
+							F.Intrinsic.Control.ElseIf(V.Local.sRowVal(V.Local.i3).Trim,=,"/")
+								V.Local.sOperator1.Set("/")
+							F.Intrinsic.Control.Else
+								'If it's not, check if it's (, [], or <>
+								F.Intrinsic.String.Left(V.Local.sRowVal(V.Local.i3).Trim,1,V.Local.sFirstChar)
+								F.Intrinsic.Control.If(V.Local.sFirstChar,=,"(")
+									V.Local.iParentheses.Set(1)
+									V.Local.fTemp.Set(0)
+								F.Intrinsic.Control.ElseIf(V.Local.sFirstChar,=,"[")
+									F.Intrinsic.String.Replace(V.Local.sRowVal(V.Local.i3),"[","",V.Local.sGL)
+									F.Intrinsic.String.Replace(V.Local.sGL,"]","",V.Local.sGL)
+									F.Intrinsic.String.Left(V.Local.sGL.Trim,1,V.Local.sFirstChar)
+									F.Intrinsic.Control.If(V.Local.sFirstChar,=,"!")
+										F.Intrinsic.String.Replace(V.Local.sGL,"!","",V.Local.sGL)
+										F.Intrinsic.Control.CallSub(GLAccountYTD,"sGL",V.Local.sGL.Trim,"iYear",V.Local.iSelectedYear,"BegDate",V.Local.dBegDate,"EndDate",V.Local.dEndDate)
+										F.Intrinsic.Math.Mult(-1,V.Args.fTotal,V.Local.fTemp)
+									F.Intrinsic.Control.Else
+										F.Intrinsic.Control.CallSub(GLAccountYTD,"sGL",V.Local.sGL.Trim,"iYear",V.Local.iSelectedYear,"BegDate",V.Local.dBegDate,"EndDate",V.Local.dEndDate)
+										V.Local.fTemp.Set(V.Args.fTotal)
+									F.Intrinsic.Control.EndIf
+								F.Intrinsic.Control.ElseIf(V.Local.sFirstChar,=,"<")
+									F.Intrinsic.String.Replace(V.Local.sRowVal(V.Local.i3),"<","",V.Local.sConstant)
+									F.Intrinsic.String.Replace(V.Local.sConstant,">","",V.Local.sConstant)
+									F.Intrinsic.String.Left(V.Local.sConstant.Trim,1,V.Local.sFirstChar)
+									F.Intrinsic.Control.If(V.Local.sFirstChar,=,"!")
+										F.Intrinsic.String.Replace(V.Local.sConstant,"!","",V.Local.sConstant)
+										F.Intrinsic.Math.ConvertToFloat(V.Local.sConstant,V.Local.fTemp)
+										F.Intrinsic.Math.Mult(-1,V.Local.fTemp,V.Local.fTemp)
+									F.Intrinsic.Control.Else
+										F.Intrinsic.Math.ConvertToFloat(V.Local.sConstant,V.Local.fTemp)
+									F.Intrinsic.Control.EndIf
+								F.Intrinsic.Control.ElseIf(V.Local.sFirstChar,=,"#")
+									F.Intrinsic.Math.Sub(V.Local.i1,1,V.Local.iEndCol)
+									F.Intrinsic.Control.CallSub(calculaterowsum,"iEnd",V.Local.iEndCol,"iYTD",1,"iRow",V.DataTable.dtYTD(V.Local.i2).No!FieldValLong)
+									V.Local.fTemp.Set(V.Args.fSum)
+'									F.Intrinsic.Math.Add(V.Local.i1,1,V.Local.iStartCol)
+								F.Intrinsic.Control.EndIf
+								F.Intrinsic.Control.If(V.Local.sOperator1.Trim,=,"+")
+									F.Intrinsic.Math.Add(V.Local.fTotalCell,V.Local.fTemp,V.Local.fTotalCell)
+								F.Intrinsic.Control.ElseIf(V.Local.sOperator1.Trim,=,"-")
+									F.Intrinsic.Math.Sub(V.Local.fTotalCell,V.Local.fTemp,V.Local.fTotalCell)
+								F.Intrinsic.Control.ElseIf(V.Local.sOperator1.Trim,=,"*")
+									F.Intrinsic.Math.Mult(V.Local.fTotalCell,V.Local.fTemp,V.Local.fTotalCell)
+								F.Intrinsic.Control.ElseIf(V.Local.sOperator1.Trim,=,"/")
+									F.Intrinsic.Math.Div(V.Local.fTotalCell,V.Local.fTemp,V.Local.fTotalCell)
+								F.Intrinsic.Control.EndIf
+							F.Intrinsic.Control.EndIf
+						F.Intrinsic.Control.Else
+							'It's a Parentheses
+							F.Intrinsic.Control.If(V.Local.sRowVal(V.Local.i3).Trim,=,"+")
+								V.Local.sOperator2.Set("+")
+							F.Intrinsic.Control.ElseIf(V.Local.sRowVal(V.Local.i3).Trim,=,"-")
+								V.Local.sOperator2.Set("-")
+							F.Intrinsic.Control.ElseIf(V.Local.sRowVal(V.Local.i3).Trim,=,"*")
+								V.Local.sOperator2.Set("*")
+							F.Intrinsic.Control.ElseIf(V.Local.sRowVal(V.Local.i3).Trim,=,"/")
+								V.Local.sOperator2.Set("/")
+							F.Intrinsic.Control.Else
+								'If it's not, check if it's ), [], or <>
+								F.Intrinsic.Math.Sub(V.Local.i3,1,V.Local.iPrev)
+								F.Intrinsic.String.Left(V.Local.sRowVal(V.Local.i3).Trim,1,V.Local.sFirstChar)
+								F.Intrinsic.Control.If(V.Local.sFirstChar,=,"[")
+									F.Intrinsic.String.Replace(V.Local.sRowVal(V.Local.i3),"[","",V.Local.sGL)
+									F.Intrinsic.String.Replace(V.Local.sGL,"]","",V.Local.sGL)
+									F.Intrinsic.String.Left(V.Local.sGL.Trim,1,V.Local.sFirstChar)
+									F.Intrinsic.Control.If(V.Local.sFirstChar,=,"!")
+										F.Intrinsic.String.Replace(V.Local.sGL,"!","",V.Local.sGL)
+										F.Intrinsic.Control.CallSub(GLAccountYTD,"sGL",V.Local.sGL.Trim,"iYear",V.Local.iSelectedYear,"BegDate",V.Local.dBegDate,"EndDate",V.Local.dEndDate)
+										F.Intrinsic.Math.Mult(-1,V.Args.fTotal,V.Local.fTransSum)
+									F.Intrinsic.Control.Else
+										F.Intrinsic.Control.CallSub(GLAccountYTD,"sGL",V.Local.sGL.Trim,"iYear",V.Local.iSelectedYear,"BegDate",V.Local.dBegDate,"EndDate",V.Local.dEndDate)
+										V.Local.fTransSum.Set(V.Args.fTotal)
+									F.Intrinsic.Control.EndIf
+								F.Intrinsic.Control.ElseIf(V.Local.sFirstChar,=,"<")
+									F.Intrinsic.String.Replace(V.Local.sRowVal(V.Local.i3),"<","",V.Local.sConstant)
+									F.Intrinsic.String.Replace(V.Local.sConstant,">","",V.Local.sConstant)
+									F.Intrinsic.String.Left(V.Local.sConstant.Trim,1,V.Local.sFirstChar)
+									F.Intrinsic.Control.If(V.Local.sFirstChar,=,"!")
+										F.Intrinsic.String.Replace(V.Local.sConstant,"!","",V.Local.sConstant)
+										F.Intrinsic.Math.ConvertToFloat(V.Local.sConstant,V.Local.fTransSum)
+										F.Intrinsic.Math.Mult(-1,V.Local.fTransSum,V.Local.fTransSum)
+									F.Intrinsic.Control.Else
+										F.Intrinsic.Math.ConvertToFloat(V.Local.sConstant,V.Local.fTransSum)
+									F.Intrinsic.Control.EndIf
+								F.Intrinsic.Control.ElseIf(V.Local.sFirstChar,=,"#")
+									F.Intrinsic.Math.Sub(V.Local.i1,1,V.Local.iEndCol)
+									F.Intrinsic.Control.CallSub(calculaterowsum,"iEnd",V.Local.iEndCol,"iYTD",1,"iRow",V.DataTable.dtYTD(V.Local.i2).No!FieldValLong)
+									V.Local.fTransSum.Set(V.Args.fSum)
+'									F.Intrinsic.Math.Add(V.Local.i1,1,V.Local.iStartCol)
+								F.Intrinsic.Control.EndIf
+								'If the previous element was (, start the temporary sum
+								F.Intrinsic.Control.If(V.Local.sRowVal(V.Local.iPrev).Trim,=,"(")
+									V.Local.fTemp.Set(V.Local.fTransSum)
+								F.Intrinsic.Control.EndIf
+								F.Intrinsic.Control.If(V.Local.sOperator2.Trim,=,"+")
+									F.Intrinsic.Math.Add(V.Local.fTemp,V.Local.fTransSum,V.Local.fTemp)
+								F.Intrinsic.Control.ElseIf(V.Local.sOperator2.Trim,=,"-")
+									F.Intrinsic.Math.Sub(V.Local.fTemp,V.Local.fTransSum,V.Local.fTemp)
+								F.Intrinsic.Control.ElseIf(V.Local.sOperator2.Trim,=,"*")
+									F.Intrinsic.Math.Mult(V.Local.fTemp,V.Local.fTransSum,V.Local.fTemp)
+								F.Intrinsic.Control.ElseIf(V.Local.sOperator2.Trim,=,"/")
+									F.Intrinsic.Math.Div(V.Local.fTemp,V.Local.fTransSum,V.Local.fTemp)
+								F.Intrinsic.Control.EndIf
+								'If this is the closing parentheses, set the total cell value based on the operator
+								F.Intrinsic.Control.If(V.Local.sFirstChar,=,")")
+									V.Local.iParentheses.Set(0)
+									F.Intrinsic.Control.If(V.Local.sOperator1.Trim,=,"+")
+										F.Intrinsic.Math.Add(V.Local.fTotalCell,V.Local.fTemp,V.Local.fTotalCell)
+									F.Intrinsic.Control.ElseIf(V.Local.sOperator1.Trim,=,"-")
+										F.Intrinsic.Math.Sub(V.Local.fTotalCell,V.Local.fTemp,V.Local.fTotalCell)
+									F.Intrinsic.Control.ElseIf(V.Local.sOperator1.Trim,=,"*")
+										F.Intrinsic.Math.Mult(V.Local.fTotalCell,V.Local.fTemp,V.Local.fTotalCell)
+									F.Intrinsic.Control.ElseIf(V.Local.sOperator1.Trim,=,"/")
+										F.Intrinsic.Math.Div(V.Local.fTotalCell,V.Local.fTemp,V.Local.fTotalCell)
+									F.Intrinsic.Control.ElseIf(V.Local.sOperator1.Trim,=,"=")
+										V.Local.fTotalCell.Set(V.Local.fTemp)
+									F.Intrinsic.Control.EndIf
+								F.Intrinsic.Control.EndIf
+								'Reset fTransSum to 0 in order to not mess up the total inside parentheses
+								V.Local.fTransSum.Set(0)
+							F.Intrinsic.Control.EndIf
+						F.Intrinsic.Control.EndIf
+					F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.Next(V.Local.i3)
+				F.Intrinsic.Math.Round(V.Local.fTotalCell,2,V.Local.fTotalCell)
+				F.Data.DataTable.SetValue("dtYTD",V.Local.i2,V.Local.sColumn,V.Local.fTotalCell)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Next(V.Local.i2)
+	F.Intrinsic.Control.Next(V.Local.i1)
+	'Grand total row
+	F.Data.DataTable.AddRow("dtYTD","Title","")
+	F.Intrinsic.Control.For(V.Local.i1,1,V.DataTable.dtRpt(V.Local.sReport).TotalColumn!FieldValLong,1)
+		F.Intrinsic.String.Concat("Col",V.Local.i1,V.Local.sColumn)
+		F.Intrinsic.String.Build("SUM({0})",V.Local.sColumn,V.Local.sFilter)
+		F.Data.DataTable.Compute("dtYTD",V.Local.sFilter,"",V.Local.fTotalCell)
+		F.Intrinsic.Control.If(V.Local.i1,=,1)
+			F.Data.DataTable.AddRow("dtYTD","Title","TOTAL YEAR TO DATE",V.Local.sColumn,V.Local.fTotalCell)
+		F.Intrinsic.Control.Else
+			F.Data.DataTable.SetValue("dtYTD",V.DataTable.dtYTD.RowCount--,V.Local.sColumn,V.Local.fTotalCell)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.i1)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.UI.ChangeWaitStatus("Loading Year To Date data into the grid")
+Gui.F_ExpenseRpt.GsGCYTD.AddGridviewFromDatatable("gvYTD","dtYTD")
+Gui.F_ExpenseRpt.GsGCYTD.MainView("gvYTD")
+F.Intrinsic.Control.For(V.Local.i1,1,V.DataTable.dtRpt(V.Local.sReport).TotalColumn!FieldValLong,1)
+	F.Intrinsic.String.Concat("Col",V.Local.i1,V.Local.sColumn)
+	F.Intrinsic.String.Build("Col = {0}",V.Local.i1,V.Local.sFilter)
+	F.Data.DataTable.Select("dtColInfo",V.Local.sFilter,V.Local.sRet)
+	Gui.F_ExpenseRpt.GsGCYTD.SetColumnProperty("gvYTD",V.Local.sColumn,"Caption",V.DataTable.dtColInfo(V.Local.sRet).Value!FieldValTrim)
+	Gui.F_ExpenseRpt.GsGCYTD.SetColumnProperty("gvYTD",V.Local.sColumn,"HeaderHAlignment","Center")
+	Gui.F_ExpenseRpt.GsGCYTD.SetColumnProperty("gvYTD",V.Local.sColumn,"DisplayCustomNumeric","###,###,###,##0.00")
+F.Intrinsic.Control.Next(V.Local.i1)
+Gui.F_ExpenseRpt.GsGCYTD.SetColumnProperty("gvYTD","No","Visible",False)
+Gui.F_ExpenseRpt.GsGCYTD.SetColumnProperty("gvYTD","Title","ShowCaption",False)
+Gui.F_ExpenseRpt.GsGCYTD.SetRowAppearance("gvYTD",V.DataTable.dtYTD.RowCount--,"fontbold",True)
+F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtYTD.RowCount--,2)
+	Gui.F_ExpenseRpt.GsGCYTD.SetRowAppearance("gvYTD",V.Local.i1,"backcolor","aliceblue")
+F.Intrinsic.Control.Next(V.Local.i1)
+Gui.F_ExpenseRpt.GsGCYTD.SetRowAppearance("gvYTD",V.DataTable.dtYTD.RowCount--,"backcolor",V.Color.Cyan)
+Gui.F_ExpenseRpt.GsGCYTD.SetRowAppearance("gvYTD",V.DataTable.dtYTD.RowCount--,"forecolor",V.Color.White)
+F.Intrinsic.UI.CloseWaitDialog
+Gui.F_ExpenseRpt.GsGCYTD.visible(True)
+Program.Sub.LoadYTD.End
+
+Program.Sub.GLAccountYTD.Start
+V.Local.dBegDate.Declare(Date)
+V.Local.dEndDate.Declare(Date)
+V.Local.fBegBal.Declare
+V.Local.fTotalCell.Declare
+V.Local.fTransSum.Declare
+V.Local.sGL.Declare
+V.Local.sSQL.Declare
+V.Local.sGL.Set(V.Args.sGL)
+V.Local.dBegDate.Set(V.Args.BegDate)
+V.Local.dEndDate.Set(V.Args.EndDate)
+'Fiscal year beginning balance
+F.Intrinsic.String.Build("select beg_bal from v_gl_balances where fiscal_yr = '{0}' and acct = '{1}'",V.Args.iYear,V.Local.sGL.Trim,V.Local.sSQL)
+F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.fBegBal)
+'Total transactions YTD
+F.Intrinsic.String.Build("select sum(amount_cmpny) from v_gl_detail where gl_number = '{0}' and post_date_sql between '{1}' and '{2}'",V.Local.sGL.Trim,V.Local.dBegDate.PervasiveDate,V.Local.dEndDate.PervasiveDate,V.Local.sSQL)
+F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.fTransSum)
+F.Intrinsic.Math.Add(V.Local.fBegBal,V.Local.fTransSum,V.Local.fTotalCell)
+F.Intrinsic.Variable.AddRV("fTotal",V.Local.fTotalCell)
+Program.Sub.GLAccountYTD.End
+
+Program.Sub.ddlPeriod_Change.Start
+V.Local.dBegDate.Declare(Date)
+V.Local.dEndDate.Declare(Date)
+V.Local.fTemp.Declare
+V.Local.fTotalCell.Declare
+V.Local.fTransSum.Declare
+V.Local.i1.Declare
+V.Local.i2.Declare
+V.Local.i3.Declare
+V.Local.iEndCol.Declare
+V.Local.iFormula.Declare
+V.Local.iParentheses.Declare
+V.Local.iPrev.Declare
+V.Local.iRow.Declare
+V.Local.iSelectedYear.Declare
+V.Local.iStartCol.Declare
+V.Local.sBegDate.Declare
+V.Local.sColumn.Declare
+V.Local.sConstant.Declare
+V.Local.sEndDate.Declare
+V.Local.sFilter.Declare
+V.Local.sFirstChar.Declare
+V.Local.sGL.Declare
+V.Local.sMessage.Declare
+V.Local.sOperator1.Declare
+V.Local.sOperator2.Declare
+V.Local.sPeriod.Declare
+V.Local.sReport.Declare
+V.Local.sRowVal.Declare
+V.Local.sRet.Declare
+V.Local.sSQL.Declare
+V.Local.sPeriodTo.Declare
+
+F.Intrinsic.Control.If(V.Screen.F_ExpenseRpt!ddlPeriod.Text,>,V.Screen.F_ExpenseRpt!ddlPeriodTo.Text)
+'	F.Intrinsic.UI.Msgbox("Beginning Period Greater Than Ending Period!","Expense Cost Center [APAC]")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtYTD.Exists,=,False)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+Gui.F_ExpenseRpt.GsGCPeriod.Visible(False)
+
+V.Local.sReport.Set(V.Screen.F_ExpenseRpt!ddlReport.Text)
+F.Intrinsic.String.Build("Name = '{0}'",V.Local.sReport.Trim,V.Local.sFilter)
+F.Data.DataTable.Select("dtRpt",V.Local.sFilter,V.Local.sReport)
+
+F.Intrinsic.Control.If(V.DataTable.dtPeriod.Exists,=,True)
+	F.Data.DataTable.Close("dtPeriod")
+F.Intrinsic.Control.EndIf
+'Clone the datatable from dtYTD
+F.Data.DataTable.Clone("dtYTD","dtPeriod",True)
+
+'Retrieve period beginning and ending date
+V.Local.sPeriod.Set(V.Screen.F_ExpenseRpt!ddlPeriod.Text)
+V.Local.iSelectedYear.Set(V.Screen.F_ExpenseRpt!ddlYear.Text)
+F.Intrinsic.String.Build("select beg_date, end_date from v_gl_calendar where start_year = '{0}' and period = '{1}'",V.Local.iSelectedYear,V.Local.sPeriod.Trim,V.Local.sSQL)
+F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+V.Local.dBegDate.Set(V.ODBC.conx!rst.FieldVal!beg_date)
+F.ODBC.conx!rst.close
+V.Local.sPeriodTo.Set(V.Screen.F_ExpenseRpt!ddlPeriodTo.Text)
+F.Intrinsic.String.Build("select beg_date, end_date from v_gl_calendar where start_year = '{0}' and period = '{1}'",V.Local.iSelectedYear,V.Local.sPeriodTo.Trim,V.Local.sSQL)
+F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+V.Local.dEndDate.Set(V.ODBC.conx!rst.FieldVal!end_date)
+F.ODBC.conx!rst.close
+
+F.Intrinsic.String.Format(V.Local.dBegDate,"D MMM YYYY",V.Local.sBegDate)
+F.Intrinsic.String.Format(V.Local.dEndDate,"D MMM YYYY",V.Local.sEndDate)
+F.Intrinsic.String.Build("({0} - {1})",V.Local.sBegDate.Trim,V.Local.sEndDate.Trim,V.Local.sMessage)
+Gui.F_ExpenseRpt.lblPeriod.Caption(V.Local.sMessage)
+
+F.Intrinsic.String.Build("Loading Data for Period {0} until {1}",V.Local.sPeriod,V.Local.sPeriodTo,V.Local.sRowVal)
+F.Intrinsic.UI.InvokeWaitDialog(V.Local.sRowVal,"Expense Cost Center [APAC]")
+
+F.Intrinsic.Control.If(V.DataTable.dtRow.Exists,=,False)
+	F.Intrinsic.String.Build("select row_no, col_value from INA_EXPENSE_RPT_ROWS where rpt_id = {0} and col_no = 0 order by row_no",V.DataTable.dtRpt(V.Local.sReport).ID!FieldValLong,V.Local.sSQL)
+	F.Data.DataTable.CreateFromSQL("dtRow","conx",V.Local.sSQL,True)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtRow.RowCount,>,0)
+	F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtRow.RowCount--,1)
+		F.Data.DataTable.AddRow("dtPeriod","No",V.DataTable.dtRow(V.Local.i1).row_no!FieldValLong,"Title",V.DataTable.dtRow(V.Local.i1).col_value!FieldValTrim)
+	F.Intrinsic.Control.Next(V.Local.i1)
+	
+'	V.Local.iStartCol.Set(1)
+	F.Intrinsic.Control.For(V.Local.i1,1,V.DataTable.dtRpt(V.Local.sReport).TotalColumn!FieldValLong,1)
+		F.Intrinsic.String.Build("Col = {0}",V.Local.i1,V.Local.sFilter)
+		F.Data.DataTable.Select("dtColInfo",V.Local.sFilter,V.Local.sRet)
+		V.Local.iFormula.Set(V.DataTable.dtColInfo(V.Local.sRet).Flag!FieldValLong)
+		F.Intrinsic.String.Concat("Col",V.Local.i1,V.Local.sColumn)
+		F.Intrinsic.String.Build("Loading Period {1} data for column: {0} until {1}",V.DataTable.dtColInfo(V.Local.sRet).Value!FieldValTrim,V.Local.sPeriod,V.Local.sPeriodTo,V.Local.sMessage)
+		F.Intrinsic.UI.ChangeWaitStatus(V.Local.sMessage,V.Local.i1,1,V.DataTable.dtRpt(V.Local.sReport).TotalColumn!FieldValLong)
+		F.Intrinsic.Control.For(V.Local.i2,0,V.DataTable.dtPeriod.RowCount--,1)
+			F.Intrinsic.Math.Add(V.Local.i2,1,V.Local.iRow)
+			F.Intrinsic.String.Build("Loading Period {3} until {4} data for column: {0}{1}Row {2}",V.DataTable.dtColInfo(V.Local.sRet).Value!FieldValTrim,V.Ambient.NewLine,V.Local.iRow,V.Local.sPeriod,V.Local.sPeriodTo,V.Local.sMessage)
+			F.Intrinsic.UI.ChangeWaitStatus(V.Local.sMessage,V.Local.iRow,1,V.DataTable.dtPeriod.RowCount)
+			F.Intrinsic.String.Build("select col_value from INA_EXPENSE_RPT_ROWS where rpt_id = {0} and row_no = {1} and col_no = {2}",V.DataTable.dtRpt(V.Local.sReport).ID!FieldValLong,V.DataTable.dtPeriod(V.Local.i2).No!FieldValLong,V.Local.i1,V.Local.sSQL)
+			F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+			V.Local.sRowVal.Set(V.ODBC.conx!rst.FieldValTrim!col_value)
+			F.ODBC.conx!rst.Close
+			F.Intrinsic.Control.If(V.Local.iFormula,=,0)
+				'Retrieve YTD for GL account only
+				F.Intrinsic.Control.CallSub(GLAccountPeriod,"sGL",V.Local.sRowVal.Trim,"BegDate",V.Local.dBegDate,"EndDate",V.Local.dEndDate)
+				F.Data.DataTable.SetValue("dtPeriod",V.Local.i2,V.Local.sColumn,V.Args.fTotal)
+			F.Intrinsic.Control.Else
+				'Retrieve YTD for formula
+				F.Intrinsic.String.Split(V.Local.sRowVal,"|",V.Local.sRowVal)
+				V.Local.fTotalCell.Set(0)
+				V.Local.fTemp.Set(0)
+				V.Local.iParentheses.Set(0)
+				F.Intrinsic.Control.For(V.Local.i3,1,V.Local.sRowVal.UBound,1)
+					F.Intrinsic.Control.If(V.Local.i3,=,1)
+						'1st variable
+						F.Intrinsic.String.Left(V.Local.sRowVal(V.Local.i3).Trim,1,V.Local.sFirstChar)
+						F.Intrinsic.Control.If(V.Local.sFirstChar,=,"(")
+							V.Local.iParentheses.Set(1)
+							V.Local.sOperator1.Set("=")
+						F.Intrinsic.Control.ElseIf(V.Local.sFirstChar,=,"[")
+							F.Intrinsic.String.Replace(V.Local.sRowVal(V.Local.i3),"[","",V.Local.sGL)
+							F.Intrinsic.String.Replace(V.Local.sGL,"]","",V.Local.sGL)
+							F.Intrinsic.String.Left(V.Local.sGL.Trim,1,V.Local.sFirstChar)
+							F.Intrinsic.Control.If(V.Local.sFirstChar,=,"!")
+								F.Intrinsic.String.Replace(V.Local.sGL,"!","",V.Local.sGL)
+								F.Intrinsic.Control.CallSub(GLAccountPeriod,"sGL",V.Local.sGL.Trim,"BegDate",V.Local.dBegDate,"EndDate",V.Local.dEndDate)
+								F.Intrinsic.Math.Mult(-1,V.Args.fTotal,V.Local.fTotalCell)
+							F.Intrinsic.Control.Else
+								F.Intrinsic.Control.CallSub(GLAccountPeriod,"sGL",V.Local.sGL.Trim,"BegDate",V.Local.dBegDate,"EndDate",V.Local.dEndDate)
+								V.Local.fTotalCell.Set(V.Args.fTotal)
+							F.Intrinsic.Control.EndIf
+						F.Intrinsic.Control.ElseIf(V.Local.sFirstChar,=,"<")
+							F.Intrinsic.String.Replace(V.Local.sRowVal(V.Local.i3),"<","",V.Local.sConstant)
+							F.Intrinsic.String.Replace(V.Local.sConstant,">","",V.Local.sConstant)
+							F.Intrinsic.String.Left(V.Local.sConstant.Trim,1,V.Local.sFirstChar)
+							F.Intrinsic.Control.If(V.Local.sFirstChar,=,"!")
+								F.Intrinsic.String.Replace(V.Local.sConstant,"!","",V.Local.sConstant)
+								F.Intrinsic.Math.ConvertToFloat(V.Local.sConstant,V.Local.fTotalCell)
+								F.Intrinsic.Math.Mult(-1,V.Local.fTotalCell,V.Local.fTotalCell)
+							F.Intrinsic.Control.Else
+								F.Intrinsic.Math.ConvertToFloat(V.Local.sConstant,V.Local.fTotalCell)
+							F.Intrinsic.Control.EndIf
+						F.Intrinsic.Control.ElseIf(V.Local.sFirstChar,=,"#")
+							F.Intrinsic.Math.Sub(V.Local.i1,1,V.Local.iEndCol)
+							F.Intrinsic.Control.CallSub(calculaterowsum,"iEnd",V.Local.iEndCol,"iYTD",0,"iRow",V.DataTable.dtPeriod(V.Local.i2).No!FieldValLong)
+							V.Local.fTotalCell.Set(V.Args.fSum)
+'							F.Intrinsic.Math.Add(V.Local.i1,1,V.Local.iStartCol)
+						F.Intrinsic.Control.EndIf
+					F.Intrinsic.Control.Else
+						'2nd variable etc
+						F.Intrinsic.Control.If(V.Local.iParentheses,=,0)
+							'No Parentheses
+							'If it's an operator sign, set the operator sign
+							F.Intrinsic.Control.If(V.Local.sRowVal(V.Local.i3).Trim,=,"+")
+								V.Local.sOperator1.Set("+")
+							F.Intrinsic.Control.ElseIf(V.Local.sRowVal(V.Local.i3).Trim,=,"-")
+								V.Local.sOperator1.Set("-")
+							F.Intrinsic.Control.ElseIf(V.Local.sRowVal(V.Local.i3).Trim,=,"*")
+								V.Local.sOperator1.Set("*")
+							F.Intrinsic.Control.ElseIf(V.Local.sRowVal(V.Local.i3).Trim,=,"/")
+								V.Local.sOperator1.Set("/")
+							F.Intrinsic.Control.Else
+								'If it's not, check if it's (, [], or <>
+								F.Intrinsic.String.Left(V.Local.sRowVal(V.Local.i3).Trim,1,V.Local.sFirstChar)
+								F.Intrinsic.Control.If(V.Local.sFirstChar,=,"(")
+									V.Local.iParentheses.Set(1)
+									V.Local.fTemp.Set(0)
+								F.Intrinsic.Control.ElseIf(V.Local.sFirstChar,=,"[")
+									F.Intrinsic.String.Replace(V.Local.sRowVal(V.Local.i3),"[","",V.Local.sGL)
+									F.Intrinsic.String.Replace(V.Local.sGL,"]","",V.Local.sGL)
+									F.Intrinsic.String.Left(V.Local.sGL.Trim,1,V.Local.sFirstChar)
+									F.Intrinsic.Control.If(V.Local.sFirstChar,=,"!")
+										F.Intrinsic.String.Replace(V.Local.sGL,"!","",V.Local.sGL)
+										F.Intrinsic.Control.CallSub(GLAccountPeriod,"sGL",V.Local.sGL.Trim,"BegDate",V.Local.dBegDate,"EndDate",V.Local.dEndDate)
+										F.Intrinsic.Math.Mult(-1,V.Args.fTotal,V.Local.fTemp)
+									F.Intrinsic.Control.Else
+										F.Intrinsic.Control.CallSub(GLAccountPeriod,"sGL",V.Local.sGL.Trim,"BegDate",V.Local.dBegDate,"EndDate",V.Local.dEndDate)
+										V.Local.fTemp.Set(V.Args.fTotal)
+									F.Intrinsic.Control.EndIf
+								F.Intrinsic.Control.ElseIf(V.Local.sFirstChar,=,"<")
+									F.Intrinsic.String.Replace(V.Local.sRowVal(V.Local.i3),"<","",V.Local.sConstant)
+									F.Intrinsic.String.Replace(V.Local.sConstant,">","",V.Local.sConstant)
+									F.Intrinsic.String.Left(V.Local.sConstant.Trim,1,V.Local.sFirstChar)
+									F.Intrinsic.Control.If(V.Local.sFirstChar,=,"!")
+										F.Intrinsic.String.Replace(V.Local.sConstant,"!","",V.Local.sConstant)
+										F.Intrinsic.Math.ConvertToFloat(V.Local.sConstant,V.Local.fTemp)
+										F.Intrinsic.Math.Mult(-1,V.Local.fTemp,V.Local.fTemp)
+									F.Intrinsic.Control.Else
+										F.Intrinsic.Math.ConvertToFloat(V.Local.sConstant,V.Local.fTemp)
+									F.Intrinsic.Control.EndIf
+								F.Intrinsic.Control.ElseIf(V.Local.sFirstChar,=,"#")
+									F.Intrinsic.Math.Sub(V.Local.i1,1,V.Local.iEndCol)
+									F.Intrinsic.Control.CallSub(calculaterowsum,"iEnd",V.Local.iEndCol,"iYTD",0,"iRow",V.DataTable.dtPeriod(V.Local.i2).No!FieldValLong)
+									V.Local.fTemp.Set(V.Args.fSum)
+'									F.Intrinsic.Math.Add(V.Local.i1,1,V.Local.iStartCol)
+								F.Intrinsic.Control.EndIf
+								F.Intrinsic.Control.If(V.Local.sOperator1.Trim,=,"+")
+									F.Intrinsic.Math.Add(V.Local.fTotalCell,V.Local.fTemp,V.Local.fTotalCell)
+								F.Intrinsic.Control.ElseIf(V.Local.sOperator1.Trim,=,"-")
+									F.Intrinsic.Math.Sub(V.Local.fTotalCell,V.Local.fTemp,V.Local.fTotalCell)
+								F.Intrinsic.Control.ElseIf(V.Local.sOperator1.Trim,=,"*")
+									F.Intrinsic.Math.Mult(V.Local.fTotalCell,V.Local.fTemp,V.Local.fTotalCell)
+								F.Intrinsic.Control.ElseIf(V.Local.sOperator1.Trim,=,"/")
+									F.Intrinsic.Math.Div(V.Local.fTotalCell,V.Local.fTemp,V.Local.fTotalCell)
+								F.Intrinsic.Control.EndIf
+							F.Intrinsic.Control.EndIf
+						F.Intrinsic.Control.Else
+							'It's a Parentheses
+							F.Intrinsic.Control.If(V.Local.sRowVal(V.Local.i3).Trim,=,"+")
+								V.Local.sOperator2.Set("+")
+							F.Intrinsic.Control.ElseIf(V.Local.sRowVal(V.Local.i3).Trim,=,"-")
+								V.Local.sOperator2.Set("-")
+							F.Intrinsic.Control.ElseIf(V.Local.sRowVal(V.Local.i3).Trim,=,"*")
+								V.Local.sOperator2.Set("*")
+							F.Intrinsic.Control.ElseIf(V.Local.sRowVal(V.Local.i3).Trim,=,"/")
+								V.Local.sOperator2.Set("/")
+							F.Intrinsic.Control.Else
+								'If it's not, check if it's ), [], or <>
+								F.Intrinsic.Math.Sub(V.Local.i3,1,V.Local.iPrev)
+								F.Intrinsic.String.Left(V.Local.sRowVal(V.Local.i3).Trim,1,V.Local.sFirstChar)
+								F.Intrinsic.Control.If(V.Local.sFirstChar,=,"[")
+									F.Intrinsic.String.Replace(V.Local.sRowVal(V.Local.i3),"[","",V.Local.sGL)
+									F.Intrinsic.String.Replace(V.Local.sGL,"]","",V.Local.sGL)
+									F.Intrinsic.String.Left(V.Local.sGL.Trim,1,V.Local.sFirstChar)
+									F.Intrinsic.Control.If(V.Local.sFirstChar,=,"!")
+										F.Intrinsic.String.Replace(V.Local.sGL,"!","",V.Local.sGL)
+										F.Intrinsic.Control.CallSub(GLAccountPeriod,"sGL",V.Local.sGL.Trim,"BegDate",V.Local.dBegDate,"EndDate",V.Local.dEndDate)
+										F.Intrinsic.Math.Mult(-1,V.Args.fTotal,V.Local.fTransSum)
+									F.Intrinsic.Control.Else
+										F.Intrinsic.Control.CallSub(GLAccountPeriod,"sGL",V.Local.sGL.Trim,"BegDate",V.Local.dBegDate,"EndDate",V.Local.dEndDate)
+										V.Local.fTransSum.Set(V.Args.fTotal)
+									F.Intrinsic.Control.EndIf
+								F.Intrinsic.Control.ElseIf(V.Local.sFirstChar,=,"<")
+									F.Intrinsic.String.Replace(V.Local.sRowVal(V.Local.i3),"<","",V.Local.sConstant)
+									F.Intrinsic.String.Replace(V.Local.sConstant,">","",V.Local.sConstant)
+									F.Intrinsic.String.Left(V.Local.sConstant.Trim,1,V.Local.sFirstChar)
+									F.Intrinsic.Control.If(V.Local.sFirstChar,=,"!")
+										F.Intrinsic.String.Replace(V.Local.sConstant,"!","",V.Local.sConstant)
+										F.Intrinsic.Math.ConvertToFloat(V.Local.sConstant,V.Local.fTransSum)
+										F.Intrinsic.Math.Mult(-1,V.Local.fTransSum,V.Local.fTransSum)
+									F.Intrinsic.Control.Else
+										F.Intrinsic.Math.ConvertToFloat(V.Local.sConstant,V.Local.fTransSum)
+									F.Intrinsic.Control.EndIf
+								F.Intrinsic.Control.ElseIf(V.Local.sFirstChar,=,"#")
+									F.Intrinsic.Math.Sub(V.Local.i1,1,V.Local.iEndCol)
+									F.Intrinsic.Control.CallSub(calculaterowsum,"iEnd",V.Local.iEndCol,"iYTD",0,"iRow",V.DataTable.dtPeriod(V.Local.i2).No!FieldValLong)
+									V.Local.fTransSum.Set(V.Args.fSum)
+'									F.Intrinsic.Math.Add(V.Local.i1,1,V.Local.iStartCol)
+								F.Intrinsic.Control.EndIf
+								'If the previous element was (, start the temporary sum
+								F.Intrinsic.Control.If(V.Local.sRowVal(V.Local.iPrev).Trim,=,"(")
+									V.Local.fTemp.Set(V.Local.fTransSum)
+								F.Intrinsic.Control.EndIf
+								F.Intrinsic.Control.If(V.Local.sOperator2.Trim,=,"+")
+									F.Intrinsic.Math.Add(V.Local.fTemp,V.Local.fTransSum,V.Local.fTemp)
+								F.Intrinsic.Control.ElseIf(V.Local.sOperator2.Trim,=,"-")
+									F.Intrinsic.Math.Sub(V.Local.fTemp,V.Local.fTransSum,V.Local.fTemp)
+								F.Intrinsic.Control.ElseIf(V.Local.sOperator2.Trim,=,"*")
+									F.Intrinsic.Math.Mult(V.Local.fTemp,V.Local.fTransSum,V.Local.fTemp)
+								F.Intrinsic.Control.ElseIf(V.Local.sOperator2.Trim,=,"/")
+									F.Intrinsic.Math.Div(V.Local.fTemp,V.Local.fTransSum,V.Local.fTemp)
+								F.Intrinsic.Control.EndIf
+								'If this is the closing parentheses, set the total cell value based on the operator
+								F.Intrinsic.Control.If(V.Local.sFirstChar,=,")")
+									V.Local.iParentheses.Set(0)
+									F.Intrinsic.Control.If(V.Local.sOperator1.Trim,=,"+")
+										F.Intrinsic.Math.Add(V.Local.fTotalCell,V.Local.fTemp,V.Local.fTotalCell)
+									F.Intrinsic.Control.ElseIf(V.Local.sOperator1.Trim,=,"-")
+										F.Intrinsic.Math.Sub(V.Local.fTotalCell,V.Local.fTemp,V.Local.fTotalCell)
+									F.Intrinsic.Control.ElseIf(V.Local.sOperator1.Trim,=,"*")
+										F.Intrinsic.Math.Mult(V.Local.fTotalCell,V.Local.fTemp,V.Local.fTotalCell)
+									F.Intrinsic.Control.ElseIf(V.Local.sOperator1.Trim,=,"/")
+										F.Intrinsic.Math.Div(V.Local.fTotalCell,V.Local.fTemp,V.Local.fTotalCell)
+									F.Intrinsic.Control.ElseIf(V.Local.sOperator1.Trim,=,"=")
+										V.Local.fTotalCell.Set(V.Local.fTemp)
+									F.Intrinsic.Control.EndIf
+								F.Intrinsic.Control.EndIf
+								'Reset fTransSum to 0 in order to not mess up the total inside parentheses
+								V.Local.fTransSum.Set(0)
+							F.Intrinsic.Control.EndIf
+						F.Intrinsic.Control.EndIf
+					F.Intrinsic.Control.EndIf
+				F.Intrinsic.Control.Next(V.Local.i3)
+				F.Intrinsic.Math.Round(V.Local.fTotalCell,2,V.Local.fTotalCell)
+				F.Data.DataTable.SetValue("dtPeriod",V.Local.i2,V.Local.sColumn,V.Local.fTotalCell)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Next(V.Local.i2)
+	F.Intrinsic.Control.Next(V.Local.i1)
+	'Grand total row
+	F.Data.DataTable.AddRow("dtPeriod","Title","")
+	F.Intrinsic.Control.For(V.Local.i1,1,V.DataTable.dtRpt(V.Local.sReport).TotalColumn!FieldValLong,1)
+		F.Intrinsic.String.Concat("Col",V.Local.i1,V.Local.sColumn)
+		F.Intrinsic.String.Build("SUM({0})",V.Local.sColumn,V.Local.sFilter)
+		F.Data.DataTable.Compute("dtPeriod",V.Local.sFilter,"",V.Local.fTotalCell)
+		F.Intrinsic.Control.If(V.Local.i1,=,1)
+			F.Data.DataTable.AddRow("dtPeriod","Title","TOTAL PERIOD",V.Local.sColumn,V.Local.fTotalCell)
+		F.Intrinsic.Control.Else
+			F.Data.DataTable.SetValue("dtPeriod",V.DataTable.dtPeriod.RowCount--,V.Local.sColumn,V.Local.fTotalCell)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.i1)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.String.Build("Loading Period {0} until {1} data into the grid",V.Local.sPeriod,V.Local.sPeriodTo,V.Local.sMessage)
+F.Intrinsic.UI.ChangeWaitStatus(V.Local.sMessage)
+gui.F_ExpenseRpt.GsGCPeriod.AddGridviewFromDatatable("gvPeriod","dtPeriod")
+Gui.F_ExpenseRpt.GsGCPeriod.MainView("gvPeriod")
+F.Intrinsic.Control.For(V.Local.i1,1,V.DataTable.dtRpt(V.Local.sReport).TotalColumn!FieldValLong,1)
+	F.Intrinsic.String.Concat("Col",V.Local.i1,V.Local.sColumn)
+	F.Intrinsic.String.Build("Col = {0}",V.Local.i1,V.Local.sFilter)
+	F.Data.DataTable.Select("dtColInfo",V.Local.sFilter,V.Local.sRet)
+	Gui.F_ExpenseRpt.GsGCPeriod.SetColumnProperty("gvPeriod",V.Local.sColumn,"Caption",V.DataTable.dtColInfo(V.Local.sRet).Value!FieldValTrim)
+	Gui.F_ExpenseRpt.GsGCPeriod.SetColumnProperty("gvPeriod",V.Local.sColumn,"HeaderHAlignment","Center")
+	Gui.F_ExpenseRpt.GsGCPeriod.SetColumnProperty("gvPeriod",V.Local.sColumn,"DisplayCustomNumeric","###,###,###,##0.00")
+F.Intrinsic.Control.Next(V.Local.i1)
+Gui.F_ExpenseRpt.GsGCPeriod.SetColumnProperty("gvPeriod","No","Visible",False)
+Gui.F_ExpenseRpt.GsGCPeriod.SetColumnProperty("gvPeriod","Title","ShowCaption",False)
+Gui.F_ExpenseRpt.GsGCPeriod.SetRowAppearance("gvPeriod",V.DataTable.dtPeriod.RowCount--,"fontbold",True)
+F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtPeriod.RowCount--,2)
+	Gui.F_ExpenseRpt.GsGCPeriod.SetRowAppearance("gvPeriod",V.Local.i1,"backcolor","aliceblue")
+F.Intrinsic.Control.Next(V.Local.i1)
+Gui.F_ExpenseRpt.GsGCPeriod.SetRowAppearance("gvPeriod",V.DataTable.dtPeriod.RowCount--,"backcolor",V.Color.Cyan)
+Gui.F_ExpenseRpt.GsGCPeriod.SetRowAppearance("gvPeriod",V.DataTable.dtPeriod.RowCount--,"forecolor",V.Color.White)
+F.Intrinsic.UI.CloseWaitDialog
+Gui.F_ExpenseRpt.GsGCPeriod.Visible(True)
+Program.Sub.ddlPeriod_Change.End
+
+Program.Sub.GLAccountPeriod.Start
+V.Local.dBegDate.Declare(Date)
+V.Local.dEndDate.Declare(Date)
+V.Local.fTotalCell.Declare
+V.Local.sGL.Declare
+V.Local.sSQL.Declare
+V.Local.sGL.Set(V.Args.sGL)
+V.Local.dBegDate.Set(V.Args.BegDate)
+V.Local.dEndDate.Set(V.Args.EndDate)
+'Total transactions YTD
+F.Intrinsic.String.Build("select sum(amount_cmpny) from v_gl_detail where gl_number = '{0}' and post_date_sql between '{1}' and '{2}'",V.Local.sGL.Trim,V.Local.dBegDate.PervasiveDate,V.Local.dEndDate.PervasiveDate,V.Local.sSQL)
+F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.fTotalCell)
+F.Intrinsic.Variable.AddRV("fTotal",V.Local.fTotalCell)
+Program.Sub.GLAccountPeriod.End
+
+Program.Sub.cmdRefresh_Click.Start
+V.Local.i1.Declare
+V.Local.iCurrentYear.Declare
+V.Local.iPeriod.Declare
+V.Local.iPrevPeriod.Declare
+V.Local.iSelectedYear.Declare
+V.Local.sPeriod.Declare
+V.Local.sPrevPeriod.Declare
+V.Local.sReport.Declare
+V.Local.sRet.Declare
+
+'Check if a report has been selected
+V.Local.sReport.Set(V.Screen.F_ExpenseRpt!ddlReport.Text)
+F.Intrinsic.Control.If(V.Local.sReport.Trim,=,"")
+	F.Intrinsic.UI.Msgbox("Please select a report","Expense Cost Center [APAC]")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+'GL Period Check
+V.Local.iSelectedYear.Set(V.Screen.F_ExpenseRpt!ddlYear.Text)
+F.Intrinsic.Date.GLPeriodFromDate(V.Ambient.Date,V.Local.sRet)
+F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+V.Local.iCurrentYear.Set(V.Local.sRet(1))
+
+V.Local.sPrevPeriod.Set(V.Screen.F_ExpenseRpt!ddlPeriod.Text)
+F.Intrinsic.Math.ConvertToLong(V.Local.sPrevPeriod,V.Local.iPrevPeriod)
+
+F.Intrinsic.Control.If(V.Local.iSelectedYear,=,V.Local.iCurrentYear)
+	F.Intrinsic.Math.ConvertToLong(V.Local.sRet(0),V.Local.iPeriod)
+F.Intrinsic.Control.ElseIf(V.Local.iSelectedYear,<,V.Local.iCurrentYear)
+	V.Local.iPeriod.Set(12)
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.Msgbox("The selected fiscal year is in the future","Expense Cost Center [APAC]")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+'Generate periods in dropdown for the selected fiscal year
+Gui.F_ExpenseRpt.ddlPeriod.ClearItems
+Gui.F_ExpenseRpt.ddlPeriodTo.ClearItems
+F.Intrinsic.Control.For(V.Local.i1,1,V.Local.iPeriod,1)
+	F.Intrinsic.String.LPad(V.Local.i1,"0",2,V.Local.sPeriod)
+	Gui.F_ExpenseRpt.ddlPeriod.AddItem(V.Local.sPeriod.Trim)
+	Gui.F_ExpenseRpt.ddlPeriodTo.AddItem(V.Local.sPeriod.Trim)
+F.Intrinsic.Control.Next(V.Local.i1)
+
+F.Intrinsic.Control.CallSub(loadytd)
+'Set the current selected period
+F.Intrinsic.Control.If(V.Local.iPrevPeriod,<=,V.Local.iPeriod)
+	Gui.F_ExpenseRpt.ddlPeriod.Text(V.Local.sPrevPeriod.Trim)
+	Gui.F_ExpenseRpt.ddlPeriodTo.Text(V.Local.sPrevPeriod.Trim)
+F.Intrinsic.Control.Else
+	F.Intrinsic.Control.If(V.Local.iSelectedYear,=,V.Local.iCurrentYear)
+		F.Intrinsic.Control.If(V.Local.iPeriod,>,1)
+			F.Intrinsic.Math.Sub(V.Local.iPeriod,1,V.Local.iPeriod)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.String.LPad(V.Local.iPeriod,"0",2,V.Local.sPeriod)
+	Gui.F_ExpenseRpt.ddlPeriod.Text(V.Local.sPeriod.Trim)
+	Gui.F_ExpenseRpt.ddlPeriodTo.Text(V.Local.sPeriod.Trim)
+F.Intrinsic.Control.EndIf
+
+Gui.F_ExpenseRpt.tab1.Enabled(True)
+Program.Sub.cmdRefresh_Click.End
+
+Program.Sub.CalculateRowSUM.Start
+V.Local.fCSum.Declare
+V.Local.fSum.Declare
+V.Local.i1.Declare
+V.Local.iEnd.Declare
+V.Local.iStart.Declare
+V.Local.sColumn.Declare
+V.Local.sFilter.Declare
+V.Local.sReport.Declare
+V.Local.sSQL.Declare
+V.Local.sStatement.Declare
+
+V.Local.fSum.Set(0)
+V.Local.iStart.Set(1)
+V.Local.iEnd.Set(V.Args.iEnd)
+'Look for the start column
+V.Local.sReport.Set(V.Screen.F_ExpenseRpt!ddlReport.Text)
+F.Intrinsic.String.Build("Name = '{0}'",V.Local.sReport.Trim,V.Local.sFilter)
+F.Data.DataTable.Select("dtRpt",V.Local.sFilter,V.Local.sReport)
+F.Intrinsic.String.Build("select col_no, col_value from ina_expense_rpt_rows where rpt_id = {0} and row_no = {1} and col_no <= {2} order by col_no",V.DataTable.dtRpt(V.Local.sReport).ID!FieldValLong,V.Args.iRow,V.Local.iEnd,V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtColCheck","Conx",V.Local.sSQL)
+F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtColCheck.RowCount--,1)
+	F.Intrinsic.Control.If(V.DataTable.dtColCheck(V.Local.i1).col_value!FieldValTrim,=,"=|#RSUM#")
+		F.Intrinsic.Math.add(V.DataTable.dtColCheck(V.Local.i1).col_no!FieldValLong,1,V.Local.iStart)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.i1)
+F.Data.DataTable.Close("dtColCheck")
+F.Intrinsic.String.Build("No = {0}",V.Args.iRow,V.Local.sFilter)
+F.Intrinsic.Control.For(V.Local.i1,V.Local.iStart,V.Local.iEnd,1)
+	F.Intrinsic.String.Build("Col{0}",V.Local.i1,V.Local.sColumn)
+	F.Intrinsic.String.Build("SUM({0})",V.Local.sColumn,V.Local.sStatement)
+	F.Intrinsic.Control.If(V.Args.iYTD,=,1)
+		F.Data.DataTable.Compute("dtYTD",V.Local.sStatement,V.Local.sFilter,V.Local.fCSum)
+	F.Intrinsic.Control.Else
+		F.Data.DataTable.Compute("dtPeriod",V.Local.sStatement,V.Local.sFilter,V.Local.fCSum)
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Math.Add(V.Local.fSum,V.Local.fCSum,V.Local.fSum)
+F.Intrinsic.Control.Next(V.Local.i1)
+F.Intrinsic.Variable.AddRV("fSum",V.Local.fSum)
+Program.Sub.CalculateRowSUM.End
+
+Program.Sub.ExportYTD.Start
+V.Local.sFileExport.Declare
+V.Local.bExcel.Declare
+V.Local.bFileLocked.Declare
+V.Local.sFilePath.Declare
+V.Local.sMsg.Declare
+
+F.Automation.MSExcel.CheckPresence(V.Local.bExcel)
+
+'Display the Save Dialog
+F.Intrinsic.Control.If(V.Local.bExcel,=,True)
+	F.Intrinsic.UI.ShowSaveFileDialog("","*.xlsx|",V.Local.sFilePath)
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.ShowSaveFileDialog("","*.csv|",V.Local.sFilePath)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Local.sFilePath,<>,"***CANCEL***")
+	V.Local.sFileExport.Set(V.Local.sFilePath)
+	F.Intrinsic.Control.If(V.Local.bExcel,=,True)
+		F.Intrinsic.String.Concat(V.Local.sFileExport,".xlsx",V.Local.sFileExport)
+		Gui.F_ExpenseRpt.GsGCYTD.Export(V.Local.sFileExport,"xlsx")
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Concat(V.Local.sFileExport,".csv",V.Local.sFileExport)
+		Gui.F_ExpenseRpt.GsGCYTD.Export(V.Local.sFileExport,"csv")
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.String.Concat("Grid has been exported to ",V.Local.sFileExport,V.Local.sMsg)
+	F.Intrinsic.UI.Msgbox(V.Local.sMsg)
+	F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+F.Intrinsic.Control.EndIf
+Program.Sub.ExportYTD.End
+
+Program.Sub.ExportPeriod.Start
+V.Local.sFileExport.Declare
+V.Local.bExcel.Declare
+V.Local.bFileLocked.Declare
+V.Local.sFilePath.Declare
+V.Local.sMsg.Declare
+
+F.Automation.MSExcel.CheckPresence(V.Local.bExcel)
+
+'Display the Save Dialog
+F.Intrinsic.Control.If(V.Local.bExcel,=,True)
+	F.Intrinsic.UI.ShowSaveFileDialog("","*.xlsx|",V.Local.sFilePath)
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.ShowSaveFileDialog("","*.csv|",V.Local.sFilePath)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Local.sFilePath,<>,"***CANCEL***")
+	V.Local.sFileExport.Set(V.Local.sFilePath)
+	F.Intrinsic.Control.If(V.Local.bExcel,=,True)
+		F.Intrinsic.String.Concat(V.Local.sFileExport,".xlsx",V.Local.sFileExport)
+		Gui.F_ExpenseRpt.GsGCPeriod.Export(V.Local.sFileExport,"xlsx")
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Concat(V.Local.sFileExport,".csv",V.Local.sFileExport)
+		Gui.F_ExpenseRpt.GsGCPeriod.Export(V.Local.sFileExport,"csv")
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.String.Concat("Grid has been exported to ",V.Local.sFileExport,V.Local.sMsg)
+	F.Intrinsic.UI.Msgbox(V.Local.sMsg)
+	F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+F.Intrinsic.Control.EndIf
+Program.Sub.ExportPeriod.End
+
+Program.Sub.Comments.Start
+${$0$}$Expense Cost Center Report$}$MHERTANTO$}$20/6/2017 5:09:00 AM$}$False
+${$3$}$0$}$$}$0$}$-1$}$$}$12:00:00 AM$}$This project allows finance manager to review non-direct expenses incurred by departments or teams. The report has to be setup using the expense cost center report setup program.
+${$5$}$2.0.0.0$}$2
+${$6$}$dyunus$}$20200619162236479$}$xZ6SHi8g7O0Qsxe6AiO2NH3PnOKQRy0TH1EtGYx42MpUQV7QlxN/H7MDg6UPU/1RmDVe38qNT6g=
+Program.Sub.Comments.End
