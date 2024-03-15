@@ -1,0 +1,1019 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.F_ExpenseRpt..Create
+Gui.F_ExpenseRpt..Caption("Expense / Cost Center Report Setup")
+Gui.F_ExpenseRpt..Size(19140,10200)
+Gui.F_ExpenseRpt..MinX(0)
+Gui.F_ExpenseRpt..MinY(0)
+Gui.F_ExpenseRpt..Position(0,0)
+Gui.F_ExpenseRpt..FontSize(9)
+Gui.F_ExpenseRpt..BackColor(-2147483633)
+Gui.F_ExpenseRpt..MousePointer(0)
+Gui.F_ExpenseRpt..Event(UnLoad,Unload)
+Gui.F_ExpenseRpt.txtTitle.Create(TextBox,"",True,4800,315,0,105,405,True,0,"Arial",9,-2147483643,1)
+Gui.F_ExpenseRpt.txtTitle.Event(LostFocus,LoadGrid)
+Gui.F_ExpenseRpt.txtTitle.MaxLength(90)
+Gui.F_ExpenseRpt.lbl1.Create(Label,"Report Title",True,1935,255,0,105,180,True,0,"Arial",9,-2147483633,0)
+Gui.F_ExpenseRpt.txtColumn.Create(TextBox,"",True,1605,315,0,105,1170,True,1,"Arial",9,-2147483643,1)
+Gui.F_ExpenseRpt.txtColumn.NumericOnly(True)
+Gui.F_ExpenseRpt.txtColumn.Event(LostFocus,EnterTotalColumn)
+Gui.F_ExpenseRpt.lbl2.Create(Label,"Total # of Columns",True,1800,255,0,105,960,True,0,"Arial",9,-2147483633,0)
+Gui.F_ExpenseRpt.cmdBrowse.Create(Button)
+Gui.F_ExpenseRpt.cmdBrowse.Size(420,420)
+Gui.F_ExpenseRpt.cmdBrowse.Position(5025,330)
+Gui.F_ExpenseRpt.cmdBrowse.Caption("^")
+Gui.F_ExpenseRpt.cmdBrowse.Event(Click,BrowseRpt)
+Gui.F_ExpenseRpt.GsGCSetup.Create(GsGridControl)
+Gui.F_ExpenseRpt.GsGCSetup.Size(18720,7245)
+Gui.F_ExpenseRpt.GsGCSetup.Position(105,2550)
+Gui.F_ExpenseRpt.GsGCSetup.Event(RowCellClick,GridClick)
+Gui.F_ExpenseRpt.GsGCSetup.Event(CellValueChanged,EnterRowTitle)
+Gui.F_ExpenseRpt.cmdNew.Create(Button)
+Gui.F_ExpenseRpt.cmdNew.Size(1605,540)
+Gui.F_ExpenseRpt.cmdNew.Position(105,1755)
+Gui.F_ExpenseRpt.cmdNew.Caption("New")
+Gui.F_ExpenseRpt.cmdNew.FontSize(9)
+Gui.F_ExpenseRpt.cmdNew.Event(Click,ClearScreen)
+Gui.F_ExpenseRpt.cmdSave.Create(Button)
+Gui.F_ExpenseRpt.cmdSave.Size(1605,540)
+Gui.F_ExpenseRpt.cmdSave.Position(1980,1755)
+Gui.F_ExpenseRpt.cmdSave.Caption("Save")
+Gui.F_ExpenseRpt.cmdSave.FontSize(9)
+Gui.F_ExpenseRpt.cmdSave.Event(Click,SaveSetup)
+Gui.F_ExpenseRpt.frame1.Create(Frame)
+Gui.F_ExpenseRpt.frame1.Size(6990,2295)
+Gui.F_ExpenseRpt.frame1.Position(6270,75)
+Gui.F_ExpenseRpt.frame1.Caption("Column Header")
+Gui.F_ExpenseRpt.frame1.FontSize(9)
+Gui.F_ExpenseRpt.GsGCColHead.Create(GsGridControl)
+Gui.F_ExpenseRpt.GsGCColHead.Size(6780,1995)
+Gui.F_ExpenseRpt.GsGCColHead.Position(105,255)
+Gui.F_ExpenseRpt.GsGCColHead.Parent("frame1")
+Gui.F_ExpenseRpt.GsGCColHead.Event(CellValueChanged,gvCol_ChangeValue)
+Gui.F_ExpenseRpt.frmFormula.Create(Frame)
+Gui.F_ExpenseRpt.frmFormula.Size(5385,2085)
+Gui.F_ExpenseRpt.frmFormula.Position(13440,180)
+Gui.F_ExpenseRpt.frmFormula.Caption("Formula")
+Gui.F_ExpenseRpt.frmFormula.FontSize(9)
+Gui.F_ExpenseRpt.txtFormula.Create(TextBox,"",True,5085,315,0,150,1605,False,0,"Arial",9,-2147483643,1)
+Gui.F_ExpenseRpt.txtFormula.Parent("frmFormula")
+Gui.F_ExpenseRpt.cmdAddGL.Create(Button)
+Gui.F_ExpenseRpt.cmdAddGL.Size(495,375)
+Gui.F_ExpenseRpt.cmdAddGL.Position(150,285)
+Gui.F_ExpenseRpt.cmdAddGL.Parent("frmFormula")
+Gui.F_ExpenseRpt.cmdAddGL.Caption("GL")
+Gui.F_ExpenseRpt.cmdAddGL.FontSize(9)
+Gui.F_ExpenseRpt.cmdAddGL.Event(Click,AddGLFormula)
+Gui.F_ExpenseRpt.lbl3.Create(Label,"Operator:",True,855,255,0,1305,405,True,0,"Arial",9,-2147483633,0)
+Gui.F_ExpenseRpt.lbl3.Parent("frmFormula")
+Gui.F_ExpenseRpt.ddlOp.Create(DropDownList)
+Gui.F_ExpenseRpt.ddlOp.Size(690,330)
+Gui.F_ExpenseRpt.ddlOp.Position(2205,315)
+Gui.F_ExpenseRpt.ddlOp.Parent("frmFormula")
+Gui.F_ExpenseRpt.ddlOp.Event(Click,AddOperatorFormula)
+Gui.F_ExpenseRpt.lbl4.Create(Label,"Constant:",True,960,255,0,150,1035,True,0,"Arial",9,-2147483633,0)
+Gui.F_ExpenseRpt.lbl4.Parent("frmFormula")
+Gui.F_ExpenseRpt.txtConstant.Create(TextBox,"",True,2640,315,0,1140,945,True,0,"Arial",9,-2147483643,1)
+Gui.F_ExpenseRpt.txtConstant.Parent("frmFormula")
+Gui.F_ExpenseRpt.txtConstant.NumericOnly(True)
+Gui.F_ExpenseRpt.txtConstant.Event(LostFocus,AddConstantFormula)
+Gui.F_ExpenseRpt.cmdP1.Create(Button)
+Gui.F_ExpenseRpt.cmdP1.Size(375,375)
+Gui.F_ExpenseRpt.cmdP1.Position(3015,285)
+Gui.F_ExpenseRpt.cmdP1.Parent("frmFormula")
+Gui.F_ExpenseRpt.cmdP1.Caption("(")
+Gui.F_ExpenseRpt.cmdP1.FontSize(9)
+Gui.F_ExpenseRpt.cmdP1.Event(Click,AddOpenParantheses)
+Gui.F_ExpenseRpt.cmdP2.Create(Button)
+Gui.F_ExpenseRpt.cmdP2.Size(375,375)
+Gui.F_ExpenseRpt.cmdP2.Position(3420,285)
+Gui.F_ExpenseRpt.cmdP2.Parent("frmFormula")
+Gui.F_ExpenseRpt.cmdP2.Caption(")")
+Gui.F_ExpenseRpt.cmdP2.FontSize(9)
+Gui.F_ExpenseRpt.cmdP2.Event(Click,AddCloseParantheses)
+Gui.F_ExpenseRpt.cmdSaveFormula.Create(Button)
+Gui.F_ExpenseRpt.cmdSaveFormula.Size(1200,375)
+Gui.F_ExpenseRpt.cmdSaveFormula.Position(4005,285)
+Gui.F_ExpenseRpt.cmdSaveFormula.Parent("frmFormula")
+Gui.F_ExpenseRpt.cmdSaveFormula.Caption("Save")
+Gui.F_ExpenseRpt.cmdSaveFormula.FontSize(9)
+Gui.F_ExpenseRpt.cmdSaveFormula.Event(Click,SaveFormula)
+Gui.F_ExpenseRpt.cmdDeleteFormula.Create(Button)
+Gui.F_ExpenseRpt.cmdDeleteFormula.Size(1200,375)
+Gui.F_ExpenseRpt.cmdDeleteFormula.Position(4005,720)
+Gui.F_ExpenseRpt.cmdDeleteFormula.Parent("frmFormula")
+Gui.F_ExpenseRpt.cmdDeleteFormula.Caption("Delete")
+Gui.F_ExpenseRpt.cmdDeleteFormula.FontSize(9)
+Gui.F_ExpenseRpt.cmdDeleteFormula.Event(Click,DeleteFormula)
+Gui.F_ExpenseRpt.cmdNegative.Create(Button)
+Gui.F_ExpenseRpt.cmdNegative.Size(495,375)
+Gui.F_ExpenseRpt.cmdNegative.Position(720,285)
+Gui.F_ExpenseRpt.cmdNegative.Parent("frmFormula")
+Gui.F_ExpenseRpt.cmdNegative.Caption("(-)")
+Gui.F_ExpenseRpt.cmdNegative.Event(Click,ChangeNegativeValue)
+Gui.F_ExpenseRpt.cmdRowSum.Create(Button)
+Gui.F_ExpenseRpt.cmdRowSum.Size(1200,375)
+Gui.F_ExpenseRpt.cmdRowSum.Position(4005,1155)
+Gui.F_ExpenseRpt.cmdRowSum.Parent("frmFormula")
+Gui.F_ExpenseRpt.cmdRowSum.Caption("Row SUM")
+Gui.F_ExpenseRpt.cmdRowSum.FontSize(9)
+Gui.F_ExpenseRpt.cmdRowSum.Event(Click,SelectRowSUM)
+Gui.F_ExpenseRpt.cmdSwitchRow.Create(Button)
+Gui.F_ExpenseRpt.cmdSwitchRow.Size(1605,540)
+Gui.F_ExpenseRpt.cmdSwitchRow.Position(3825,1755)
+Gui.F_ExpenseRpt.cmdSwitchRow.Caption("Switch Row")
+Gui.F_ExpenseRpt.cmdSwitchRow.FontSize(9)
+Gui.F_ExpenseRpt.cmdSwitchRow.Event(Click,SwitchRow)
+Gui.F_ExpenseRpt.lbl5.Create(Label,"* Data that are not saved before changing column numbers will be lost",True,3450,540,0,1980,1050,True,0,"Arial",8,-2147483633,0)
+Gui.F_ExpenseRpt.lbl5.FontStyle(True,False,False,False,False)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+V.Global.iBracket.Declare
+V.Global.iColumn.Declare
+V.Global.iID.Declare
+V.Global.sDtColumn.Declare
+V.Global.sFormula.Declare
+V.Global.iR.Declare
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+V.Local.bExist.Declare
+V.Local.sIconPath.Declare
+
+F.ODBC.Connection!conx.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+
+F.ODBC.Connection!conx.TableExists("INA_EXPENSE_RPT_HEAD",V.Local.bExist)
+F.Intrinsic.Control.If(V.Local.bExist,=,False)
+	F.ODBC.Connection!Conx.Execute("CREATE TABLE INA_EXPENSE_RPT_HEAD (ID IDENTITY NOT NULL, RPT_NAME VARCHAR(90), TOTAL_COLS INTEGER, USER_CREATE VARCHAR(8), DATE_CREATE DATETIME, USER_UPDATE VARCHAR(8), DATE_UPDATE DATETIME, PRIMARY KEY (ID));")
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!conx.TableExists("INA_EXPENSE_RPT_COLS",V.Local.bExist)
+F.Intrinsic.Control.If(V.Local.bExist,=,False)
+	F.ODBC.Connection!Conx.Execute("CREATE TABLE INA_EXPENSE_RPT_COLS (RPT_ID INTEGER, COL_NO INTEGER, COL_NAME VARCHAR(90), COL_FLAG INTEGER, PRIMARY KEY (RPT_ID, COL_NO), FOREIGN KEY (RPT_ID) REFERENCES INA_EXPENSE_RPT_HEAD(ID));")
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!conx.TableExists("INA_EXPENSE_RPT_ROWS",V.Local.bExist)
+F.Intrinsic.Control.If(V.Local.bExist,=,False)
+	F.ODBC.Connection!Conx.Execute("CREATE TABLE INA_EXPENSE_RPT_ROWS (RPT_ID INTEGER, ROW_NO INTEGER, COL_NO INTEGER, COL_VALUE VARCHAR(90), PRIMARY KEY (RPT_ID, ROW_NO, COL_NO), FOREIGN KEY (RPT_ID) REFERENCES INA_EXPENSE_RPT_HEAD(ID));")
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!conx.ExecuteAndReturn("SELECT TOP 1 ID FROM INA_EXPENSE_RPT_HEAD ORDER BY ID DESC",V.Global.iID)
+F.Intrinsic.Math.Add(V.Global.iID,1,V.Global.iID)
+
+F.Intrinsic.String.Concat(V.Caller.GlobalDir,"\ART\gss2.ico",V.Local.sIconPath)
+Gui.F_ExpenseRpt..Icon(V.Local.sIconPath)
+
+Gui.F_ExpenseRpt.frame1.Visible(False)
+Gui.F_ExpenseRpt.frmFormula.Visible(False)
+Gui.F_ExpenseRpt.ddlOp.AddItem("+")
+Gui.F_ExpenseRpt.ddlOp.AddItem("-")
+Gui.F_ExpenseRpt.ddlOp.AddItem("*")
+Gui.F_ExpenseRpt.ddlOp.AddItem("/")
+Gui.F_ExpenseRpt.lblCreator.Visible(False)
+Gui.F_ExpenseRpt.lblUpdated.Visible(False)
+V.Global.iColumn.Set(0)
+Gui.F_ExpenseRpt..Show
+
+Program.Sub.Main.End
+
+Program.Sub.Unload.Start
+F.Intrinsic.Control.If(V.DataTable.dtColumn.Exists,=,True)
+	F.Data.DataTable.Close("dtColumn")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtGrid.Exists,=,True)
+	F.Data.DataTable.Close("dtGrid")
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!conx.Close
+F.Intrinsic.Control.End
+
+Program.Sub.Unload.End
+
+Program.Sub.EnterTotalColumn.Start
+V.Local.i1.Declare
+V.Local.i2.Declare
+V.Local.iAdd.Declare
+V.Local.iColumn.Declare
+V.Local.sColumn.Declare
+V.Local.sFilter.Declare
+V.Local.sRet.Declare
+V.Local.sSQL.Declare
+
+V.Local.iColumn.Set(V.Screen.F_ExpenseRpt!txtColumn.Text)
+F.Intrinsic.Control.If(V.Local.iColumn,>,0)
+	V.Global.iColumn.Set(V.Screen.F_ExpenseRpt!txtColumn.Text)
+	
+	F.Intrinsic.Control.If(V.DataTable.dtColumn.Exists,=,True)
+		F.Data.DataTable.Close("dtColumn")
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.DataTable.dtGrid.Exists,=,True)
+		F.Data.DataTable.Close("dtGrid")
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.String.Build("select col_no as Col, col_name as Value, col_flag as Flag from INA_EXPENSE_RPT_COLS where rpt_id = {0} and col_no <= {1} order by col_no",V.Global.iID,V.Global.iColumn,V.Local.sSQL)
+	F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+
+	F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,False)
+		'Report has been created before, create dtColumn from SQL
+		F.Data.DataTable.CreateFromSQL("dtColumn","conx",V.Local.sSQL,True)
+		F.Data.DataTable.AddColumn("dtColumn","Formula","Boolean",False)
+		F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtColumn.RowCount--,1)
+			F.Intrinsic.Control.If(V.DataTable.dtColumn(V.Local.i1).Flag!FieldValLong,=,0)
+				F.Data.DataTable.SetValue("dtColumn",V.Local.i1,"Formula",False)
+			F.Intrinsic.Control.Else
+				F.Data.DataTable.SetValue("dtColumn",V.Local.i1,"Formula",True)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Next(V.Local.i1)
+		F.Intrinsic.Control.If(V.Global.iColumn,>,V.DataTable.dtColumn.RowCount)
+			F.Intrinsic.Math.Add(V.DataTable.dtColumn.RowCount,1,V.Local.iAdd)
+			F.Intrinsic.Control.For(V.Local.i1,V.Local.iAdd,V.Global.iColumn,1)
+				F.Data.DataTable.AddRow("dtColumn","Col",V.Local.i1,"Flag",0,"Formula",False)
+			F.Intrinsic.Control.Next(V.Local.i1)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		'New report, create table
+		F.Data.DataTable.Create("dtColumn",True)
+		F.Data.DataTable.AddColumn("dtColumn","Col","Long")
+		F.Data.DataTable.AddColumn("dtColumn","Value","String")
+		F.Data.DataTable.AddColumn("dtColumn","Flag","Long",0)
+		F.Data.DataTable.AddColumn("dtColumn","Formula","Boolean",False)
+		F.Intrinsic.Control.For(V.Local.i1,1,V.Global.iColumn,1)
+			F.Data.DataTable.AddRow("dtColumn","Col",V.Local.i1)
+		F.Intrinsic.Control.Next(V.Local.i1)
+'		F.Data.DataTable.SetValue("dtColumn",-1,"Formula",False)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conx!rst.Close
+	
+	Gui.F_ExpenseRpt.GsGCColHead.AddGridviewFromDatatable("gvCol","dtColumn")
+	Gui.F_ExpenseRpt.GsGCColHead.MainView("gvCol")
+	Gui.F_ExpenseRpt.GsGCColHead.SetColumnProperty("gvCol","Flag","Visible",False)
+	Gui.F_ExpenseRpt.GsGCColHead.SetColumnProperty("gvCol","Col","HeaderHAlignment","Center")
+	Gui.F_ExpenseRpt.GsGCColHead.SetColumnProperty("gvCol","Value","HeaderHAlignment","Center")
+	Gui.F_ExpenseRpt.GsGCColHead.SetColumnProperty("gvCol","Formula","HeaderHAlignment","Center")
+	Gui.F_ExpenseRpt.GsGCColHead.SetColumnProperty("gvCol","Col","CellHAlignment","Center")
+	Gui.F_ExpenseRpt.GsGCColHead.SetColumnProperty("gvCol","Col","Caption","Column")
+	Gui.F_ExpenseRpt.GsGCColHead.SetColumnProperty("gvCol","Value","Caption","Column Title")
+	Gui.F_ExpenseRpt.GsGCColHead.SetColumnProperty("gvCol","Col","MinWidth","50")
+	Gui.F_ExpenseRpt.GsGCColHead.SetColumnProperty("gvCol","Value","MinWidth","300")
+	Gui.F_ExpenseRpt.GsGCColHead.SetColumnProperty("gvCol","Formula","MinWidth","60")
+	Gui.F_ExpenseRpt.GsGCColHead.SetColumnProperty("gvCol","Value","AllowEdit",True)
+	Gui.F_ExpenseRpt.GsGCColHead.SetColumnProperty("gvCol","Formula","AllowEdit",True)
+	Gui.F_ExpenseRpt.GsGCColHead.SetColumnProperty("gvCol","Value","ReadOnly",False)
+	Gui.F_ExpenseRpt.GsGCColHead.SetColumnProperty("gvCol","Formula","ReadOnly",False)
+	F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtColumn.RowCount--,2)
+		Gui.F_ExpenseRpt.GsGCColHead.SetRowAppearance("gvCol",V.Local.i1,"backcolor","aliceblue")
+	F.Intrinsic.Control.Next(V.Local.i1)
+	Gui.F_ExpenseRpt.frame1.Visible(True)
+	
+	'Reset the grid
+	F.Data.DataTable.Create("dtGrid",True)
+	F.Data.DataTable.AddColumn("dtGrid","No","Long")
+	F.Data.DataTable.AddColumn("dtGrid","Title","String")
+	F.Intrinsic.Control.For(V.Local.i1,1,V.Global.iColumn,1)
+		F.Intrinsic.String.Concat("Col",V.Local.i1,V.Local.sColumn)
+		F.Data.DataTable.AddColumn("dtGrid",V.Local.sColumn.Trim,"String")
+	F.Intrinsic.Control.Next(V.Local.i1)
+	
+	'Retrieve grid data for an existing report
+	F.Intrinsic.String.Build("select row_no, col_value from INA_EXPENSE_RPT_ROWS where rpt_id = {0} and col_no = 0 order by row_no",V.Global.iID,V.Local.sSQL)
+	F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+	F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,False)
+		'Insert row titles
+		F.Data.DataTable.CreateFromSQL("dtRow","conx",V.Local.sSQL)
+		F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtRow.RowCount--,1)
+			F.Data.DataTable.AddRow("dtGrid","No",V.DataTable.dtRow(V.Local.i1).row_no!FieldValLong,"Title",V.DataTable.dtRow(V.Local.i1).col_value!FieldValTrim)
+		F.Intrinsic.Control.Next(V.Local.i1)
+		
+		'Insert column values
+		F.Intrinsic.String.Build("select row_no, col_no, col_value from INA_EXPENSE_RPT_ROWS where rpt_id = {0} and col_no <> 0",V.Global.iID,V.Local.sSQL)
+		F.Data.DataTable.CreateFromSQL("dtValues","conx",V.Local.sSQL)
+		F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtGrid.RowCount--,1)
+			F.Intrinsic.Control.For(V.Local.i2,1,V.Global.iColumn,1)
+				F.Intrinsic.String.Build("row_no = {0} and col_no = {1}",V.DataTable.dtGrid(V.Local.i1).No!FieldValLong,V.Local.i2,V.Local.sFilter)
+				F.Data.DataTable.Select("dtValues",V.Local.sFilter,V.Local.sRet)
+				F.Intrinsic.Control.If(V.Local.sRet,<>,"***NORETURN***")
+					F.Intrinsic.String.Concat("Col",V.Local.i2,V.Local.sColumn)
+					F.Data.DataTable.SetValue("dtGrid",V.Local.i1,V.Local.sColumn,V.DataTable.dtValues(V.Local.sRet).col_value!FieldValTrim)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.Next(V.Local.i2)
+		F.Intrinsic.Control.Next(V.Local.i1)
+		F.Data.DataTable.Close("dtValues")
+		F.Intrinsic.Math.Add(V.DataTable.dtRow(V.DataTable.dtRow.RowCount--).row_no!FieldValLong,1,V.Local.i1)
+		F.Data.DataTable.AddRow("dtGrid","No",V.Local.i1)
+		F.Data.DataTable.Close("dtRow")
+	F.Intrinsic.Control.Else
+		F.Data.DataTable.AddRow("dtGrid","No",1)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conx!rst.Close	
+
+	F.Intrinsic.Control.CallSub(loadgrid)
+F.Intrinsic.Control.Else
+	F.Intrinsic.Control.If(V.Global.iColumn,=,0)
+		Gui.F_ExpenseRpt.txtColumn.Text("")
+	F.Intrinsic.Control.Else
+		Gui.F_ExpenseRpt.txtColumn.Text(V.Global.iColumn)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+Program.Sub.EnterTotalColumn.End
+
+Program.Sub.LoadGrid.Start
+V.Local.i1.Declare
+V.Local.sCol.Declare
+V.Local.sColumn.Declare
+V.Local.sName.Declare
+V.Local.sTitle.Declare
+
+V.Local.sCol.Set(V.Screen.F_ExpenseRpt!txtColumn.Text)
+V.Local.sTitle.Set(V.Screen.F_ExpenseRpt!txtTitle.Text)
+
+F.Intrinsic.Control.If(V.Local.sCol.Trim,<>,"")
+F.Intrinsic.Control.AndIf(V.Local.sTitle.Trim,<>,"")
+	Gui.F_ExpenseRpt.GsGCSetup.Visible(False)
+	Gui.F_ExpenseRpt.GsGCSetup.AddGridviewFromDatatable("gvGrid","dtGrid")
+	Gui.F_ExpenseRpt.GsGCSetup.MainView("gvGrid")
+	Gui.F_ExpenseRpt.GsGCSetup.SetGridviewProperty("gvGrid","multiselect",True)
+	Gui.F_ExpenseRpt.GsGCSetup.SetColumnProperty("gvGrid","No","HeaderHAlignment","Center")
+	Gui.F_ExpenseRpt.GsGCSetup.SetColumnProperty("gvGrid","Title","HeaderHAlignment","Center")
+	Gui.F_ExpenseRpt.GsGCSetup.SetColumnProperty("gvGrid","No","CellHAlignment","Center")
+	Gui.F_ExpenseRpt.GsGCSetup.SetColumnProperty("gvGrid","No","Fixed","Left")
+	Gui.F_ExpenseRpt.GsGCSetup.SetColumnProperty("gvGrid","Title","Fixed","Left")
+	Gui.F_ExpenseRpt.GsGCSetup.SetColumnProperty("gvGrid","Title","AllowEdit",True)
+	Gui.F_ExpenseRpt.GsGCSetup.SetColumnProperty("gvGrid","Title","ReadOnly",False)
+	Gui.F_ExpenseRpt.GsGCSetup.SetColumnProperty("gvGrid","No","MinWidth","20")
+	Gui.F_ExpenseRpt.GsGCSetup.SetColumnProperty("gvGrid","Title","MinWidth","300")
+	Gui.F_ExpenseRpt.GsGCSetup.SetColumnProperty("gvGrid","Title","Caption","Row Title")
+	F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtColumn.RowCount--,1)
+		F.Intrinsic.String.Concat("Col",V.DataTable.dtColumn(V.Local.i1).Col!FieldValLong,V.Local.sColumn)
+		Gui.F_ExpenseRpt.GsGCSetup.SetColumnProperty("gvGrid",V.Local.sColumn.Trim,"HeaderHAlignment","Center")
+		Gui.F_ExpenseRpt.GsGCSetup.SetColumnProperty("gvGrid",V.Local.sColumn.Trim,"CellHAlignment","Center")
+		F.Intrinsic.Control.If(V.DataTable.dtColumn(V.Local.i1).Value!FieldValTrim,<>,"")
+			Gui.F_ExpenseRpt.GsGCSetup.SetColumnProperty("gvGrid",V.Local.sColumn.Trim,"Caption",V.DataTable.dtColumn(V.Local.i1).Value!FieldValTrim)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("Column {0}",V.DataTable.dtColumn(V.Local.i1).Col!FieldValLong,V.Local.sName)
+			Gui.F_ExpenseRpt.GsGCSetup.SetColumnProperty("gvGrid",V.Local.sColumn.Trim,"Caption",V.Local.sName.Trim)
+		F.Intrinsic.Control.EndIf
+		Gui.F_ExpenseRpt.GsGCSetup.SetColumnProperty("gvGrid",V.Local.sColumn.Trim,"AllowEdit",False)
+		Gui.F_ExpenseRpt.GsGCSetup.SetColumnProperty("gvGrid",V.Local.sColumn.Trim,"CellFontUnderline",True)
+		Gui.F_ExpenseRpt.GsGCSetup.SetColumnProperty("gvGrid",V.Local.sColumn.Trim,"CellForeColor",V.Color.Blue)
+		Gui.F_ExpenseRpt.GsGCSetup.SetColumnProperty("gvGrid",V.Local.sColumn.Trim,"MinWidth","150")
+	F.Intrinsic.Control.Next(V.Local.i1)
+	F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtGrid.RowCount--,2)
+		Gui.F_ExpenseRpt.GsGCSetup.SetRowAppearance("gvGrid",V.Local.i1,"backcolor","aliceblue")
+	F.Intrinsic.Control.Next(V.Local.i1)
+	Gui.F_ExpenseRpt.GsGCSetup.Visible(True)
+F.Intrinsic.Control.EndIf
+Program.Sub.LoadGrid.End
+
+Program.Sub.GridClick.Start
+V.Local.i1.Declare
+V.Local.iColumn.Declare
+V.Local.iWidths.Declare
+V.Local.sColumn.Declare
+V.Local.sFilter.Declare
+V.Local.sFormula.Declare
+V.Local.sRet.Declare
+V.Local.sSplit.Declare
+V.Local.sTitles.Declare
+V.Local.sValue.Declare
+
+F.Intrinsic.Control.If(V.Args.Column,<>,"No")
+F.Intrinsic.Control.AndIf(V.Args.Column,<>,"Title")
+	F.Intrinsic.String.Mid(V.Args.Column,4,V.Local.sColumn)
+	F.Intrinsic.Math.ConvertToLong(V.Local.sColumn,V.Local.iColumn)
+	F.Intrinsic.String.Build("Col = {0}",V.Local.iColumn,V.Local.sFilter)
+	F.Data.DataTable.Select("dtColumn",V.Local.sFilter,V.Local.sColumn)
+	F.Intrinsic.Control.If(V.DataTable.dtGrid(V.Args.RowIndex).Title!FieldValTrim,<>,"")
+		F.Intrinsic.Control.If(V.DataTable.dtColumn(V.Local.sColumn).Flag!FieldValLong,=,0)
+			Gui.F_ExpenseRpt.frmFormula.Visible(False)
+			F.Intrinsic.String.Split("GL Account*!*Description*!*Extra Description 1*!*Extra Description 2*!*Extra Description 3","*!*",V.Local.sTitles)
+			F.Intrinsic.String.Split("1600*!*3000*!*2500*!*2500*!*2500","*!*",V.Local.iWidths)
+			F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+			F.Intrinsic.UI.Browser("Select a GL Account","conx","select gl_account, descr, user_1, user_2, user_3 from v_gl_master order by gl_account",V.Local.sTitles,V.Local.iWidths,12500,10000,V.Local.sRet)
+			F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+				F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+				F.Data.DataTable.SetValue("dtGrid",V.Args.RowIndex,V.Args.Column,V.Local.sRet(0).Trim)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Else
+			Gui.F_ExpenseRpt.txtConstant.Text("")
+			F.Intrinsic.String.Mid(V.Args.Column,4,V.Local.sColumn)
+			F.Intrinsic.Math.ConvertToLong(V.Local.sColumn,V.Local.iColumn)
+			F.Intrinsic.Math.Add(V.Local.iColumn,1,V.Local.iColumn)
+			Gui.F_ExpenseRpt.GsGCSetup.GetCellValue("gvGrid",V.Local.iColumn,V.Args.RowIndex,V.Local.sRet)
+			F.Intrinsic.Control.If(V.Local.sRet.Trim,=,"")
+				Gui.F_ExpenseRpt.txtFormula.Text("=")
+				V.Global.sFormula.Set("=")
+			F.Intrinsic.Control.Else
+				V.Global.sFormula.Set(V.Local.sRet.Trim)
+				F.Intrinsic.String.Split(V.Global.sFormula,"|",V.Local.sSplit)
+				V.Local.sFormula.Set(V.Local.sSplit(0).Trim)
+				F.Intrinsic.Control.For(V.Local.i1,1,V.Local.sSplit.UBound,1)
+					F.Intrinsic.string.Concat(V.Local.sFormula,V.Local.sSplit(V.Local.i1).Trim,V.Local.sFormula)
+				F.Intrinsic.Control.Next(V.Local.i1)
+				Gui.F_ExpenseRpt.txtFormula.Text(V.Local.sFormula.Trim)
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.CallSub(checkformula)
+			Gui.F_ExpenseRpt.frmFormula.Visible(True)
+			V.Global.iBracket.Set(0)
+			V.Global.iR.Set(V.Args.RowIndex)
+			V.Global.sDtColumn.Set(V.Args.Column)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+Program.Sub.GridClick.End
+
+Program.Sub.EnterRowTitle.Start
+V.Local.i1.Declare
+V.Local.iNRow.Declare
+V.Local.iRet.Declare
+V.Local.iRow.Declare
+V.Local.sMsg.Declare
+V.Local.sValue.Declare
+V.Local.sValue.Set(V.Args.Value)
+F.Intrinsic.Control.If(V.Args.Column,=,"Title")
+	F.Intrinsic.Control.If(V.Args.RowIndex,=,V.DataTable.dtGrid.RowCount--)
+		F.Intrinsic.Control.If(V.Local.sValue.Trim,<>,"")
+			F.Data.DataTable.SetValue("dtGrid",V.Args.RowIndex,V.Args.Column,V.Local.sValue)
+			F.Intrinsic.Math.Add(V.DataTable.dtGrid.RowCount,1,V.Local.iRow)
+			F.Data.DataTable.AddRow("dtGrid","No",V.Local.iRow)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Local.sValue.Trim,=,"")
+			F.Intrinsic.String.Build("Do you want to delete row {0}?",V.DataTable.dtGrid(V.Args.RowIndex).No!FieldValLong,V.Local.sMsg)
+			F.Intrinsic.UI.Msgbox(V.Local.sMsg,"Delete Confirmation",4,V.Local.iRet)
+			F.Intrinsic.Control.If(V.Local.iRet,=,6)
+				V.Local.iRow.Set(V.Args.RowIndex)
+				F.Data.DataTable.DeleteRow("dtGrid",V.Args.RowIndex)
+				'Renumber the row
+				F.Intrinsic.Control.For(V.Local.i1,V.Local.iRow,V.DataTable.dtGrid.RowCount--,1)
+					F.Intrinsic.Math.Add(V.Local.i1,1,V.Local.iNRow)
+					F.Data.DataTable.SetValue("dtGrid",V.Local.i1,"No",V.Local.iNRow)
+				F.Intrinsic.Control.Next(V.Local.i1)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+Program.Sub.EnterRowTitle.End
+
+Program.Sub.CheckFormula.Start
+V.Local.bExist.Declare
+V.Local.sCheck.Declare
+V.Local.sFormula.Declare
+
+V.Local.sFormula.Set(V.Screen.F_ExpenseRpt!txtFormula.Text)
+F.Intrinsic.String.Right(V.Local.sFormula.Trim,1,V.Local.sCheck)
+F.Intrinsic.String.IsInString(V.Local.sFormula,"#RSUM#",True,V.Local.bExist)
+F.Intrinsic.Control.If(V.Local.sCheck.Trim,=,"=")
+	Gui.F_ExpenseRpt.ddlOp.Enabled(False)
+	Gui.F_ExpenseRpt.cmdP1.Enabled(True)
+	Gui.F_ExpenseRpt.cmdP2.Enabled(False)
+	Gui.F_ExpenseRpt.txtConstant.Enabled(True)
+	Gui.F_ExpenseRpt.cmdAddGL.Enabled(True)
+	Gui.F_ExpenseRpt.cmdNegative.Enabled(False)
+	Gui.F_ExpenseRpt.cmdRowSum.Enabled(True)
+F.Intrinsic.Control.ElseIf(V.Local.sCheck.Trim,=,"#")
+	Gui.F_ExpenseRpt.ddlOp.Enabled(True)
+	Gui.F_ExpenseRpt.ddlOp.Text("")
+	Gui.F_ExpenseRpt.cmdP1.Enabled(False)
+	Gui.F_ExpenseRpt.cmdNegative.Enabled(False)
+	F.Intrinsic.Control.If(V.Global.iBracket,=,0)
+		Gui.F_ExpenseRpt.cmdP2.Enabled(False)
+		Gui.F_ExpenseRpt.cmdSaveFormula.Enabled(True)
+	F.Intrinsic.Control.Else
+		Gui.F_ExpenseRpt.cmdP2.Enabled(True)
+		Gui.F_ExpenseRpt.cmdSaveFormula.Enabled(False)
+	F.Intrinsic.Control.EndIf
+	Gui.F_ExpenseRpt.txtConstant.Enabled(False)
+	Gui.F_ExpenseRpt.cmdAddGL.Enabled(False)
+	Gui.F_ExpenseRpt.cmdRowSum.Enabled(False)
+F.Intrinsic.Control.ElseIf(V.Local.sCheck.Trim,=,"]")
+	Gui.F_ExpenseRpt.ddlOp.Enabled(True)
+	Gui.F_ExpenseRpt.ddlOp.Text("")
+	Gui.F_ExpenseRpt.cmdP1.Enabled(False)
+	Gui.F_ExpenseRpt.cmdNegative.Enabled(True)
+	F.Intrinsic.Control.If(V.Global.iBracket,=,0)
+		Gui.F_ExpenseRpt.cmdP2.Enabled(False)
+		Gui.F_ExpenseRpt.cmdSaveFormula.Enabled(True)
+	F.Intrinsic.Control.Else
+		Gui.F_ExpenseRpt.cmdP2.Enabled(True)
+		Gui.F_ExpenseRpt.cmdSaveFormula.Enabled(False)
+	F.Intrinsic.Control.EndIf
+	Gui.F_ExpenseRpt.txtConstant.Enabled(False)
+	Gui.F_ExpenseRpt.cmdAddGL.Enabled(False)
+	Gui.F_ExpenseRpt.cmdRowSum.Enabled(False)
+F.Intrinsic.Control.ElseIf(V.Local.sCheck.Trim,=,">")
+	Gui.F_ExpenseRpt.ddlOp.Enabled(True)
+	Gui.F_ExpenseRpt.ddlOp.Text("")
+	Gui.F_ExpenseRpt.cmdP1.Enabled(False)
+	Gui.F_ExpenseRpt.cmdNegative.Enabled(True)
+	F.Intrinsic.Control.If(V.Global.iBracket,=,0)
+		Gui.F_ExpenseRpt.cmdP2.Enabled(False)
+		Gui.F_ExpenseRpt.cmdSaveFormula.Enabled(True)
+	F.Intrinsic.Control.Else
+		Gui.F_ExpenseRpt.cmdP2.Enabled(True)
+		Gui.F_ExpenseRpt.cmdSaveFormula.Enabled(False)
+	F.Intrinsic.Control.EndIf
+	Gui.F_ExpenseRpt.txtConstant.Enabled(False)
+	Gui.F_ExpenseRpt.cmdAddGL.Enabled(False)
+	Gui.F_ExpenseRpt.cmdRowSum.Enabled(False)
+F.Intrinsic.Control.ElseIf(V.Local.sCheck.Trim,=,"(")
+	Gui.F_ExpenseRpt.ddlOp.Enabled(False)
+	Gui.F_ExpenseRpt.cmdP1.Enabled(False)
+	Gui.F_ExpenseRpt.cmdP2.Enabled(False)
+	Gui.F_ExpenseRpt.txtConstant.Enabled(True)
+	Gui.F_ExpenseRpt.cmdAddGL.Enabled(True)
+	Gui.F_ExpenseRpt.cmdSaveFormula.Enabled(False)
+	Gui.F_ExpenseRpt.cmdNegative.Enabled(False)
+	F.Intrinsic.Control.If(V.Local.bExist,=,True)
+		Gui.F_ExpenseRpt.cmdRowSum.Enabled(False)
+	F.Intrinsic.Control.Else
+		Gui.F_ExpenseRpt.cmdRowSum.Enabled(True)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.ElseIf(V.Local.sCheck.Trim,=,")")
+	Gui.F_ExpenseRpt.ddlOp.Enabled(True)
+	Gui.F_ExpenseRpt.ddlOp.Text("")
+	Gui.F_ExpenseRpt.cmdP1.Enabled(False)
+	Gui.F_ExpenseRpt.cmdP2.Enabled(False)
+	Gui.F_ExpenseRpt.txtConstant.Enabled(False)
+	Gui.F_ExpenseRpt.cmdAddGL.Enabled(False)
+	Gui.F_ExpenseRpt.cmdSaveFormula.Enabled(True)
+	Gui.F_ExpenseRpt.cmdNegative.Enabled(False)
+F.Intrinsic.Control.ElseIf(V.Local.sCheck.Trim,=,"+")
+	Gui.F_ExpenseRpt.ddlOp.Enabled(False)
+	F.Intrinsic.Control.If(V.Global.iBracket,=,0)
+		Gui.F_ExpenseRpt.cmdP1.Enabled(True)
+		Gui.F_ExpenseRpt.cmdP2.Enabled(False)
+	F.Intrinsic.Control.Else
+		Gui.F_ExpenseRpt.cmdP1.Enabled(False)
+		Gui.F_ExpenseRpt.cmdP2.Enabled(True)
+	F.Intrinsic.Control.EndIf
+	Gui.F_ExpenseRpt.txtConstant.Enabled(True)
+	Gui.F_ExpenseRpt.cmdAddGL.Enabled(True)
+	Gui.F_ExpenseRpt.cmdSaveFormula.Enabled(False)
+	Gui.F_ExpenseRpt.cmdNegative.Enabled(False)
+	Gui.F_ExpenseRpt.cmdRowSum.Enabled(False)
+	F.Intrinsic.Control.If(V.Local.bExist,=,True)
+		Gui.F_ExpenseRpt.cmdRowSum.Enabled(False)
+	F.Intrinsic.Control.Else
+		Gui.F_ExpenseRpt.cmdRowSum.Enabled(True)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.ElseIf(V.Local.sCheck.Trim,=,"-")
+	Gui.F_ExpenseRpt.ddlOp.Enabled(False)
+	F.Intrinsic.Control.If(V.Global.iBracket,=,0)
+		Gui.F_ExpenseRpt.cmdP1.Enabled(True)
+		Gui.F_ExpenseRpt.cmdP2.Enabled(False)
+	F.Intrinsic.Control.Else
+		Gui.F_ExpenseRpt.cmdP1.Enabled(False)
+		Gui.F_ExpenseRpt.cmdP2.Enabled(True)
+	F.Intrinsic.Control.EndIf
+	Gui.F_ExpenseRpt.txtConstant.Enabled(True)
+	Gui.F_ExpenseRpt.cmdAddGL.Enabled(True)
+	Gui.F_ExpenseRpt.cmdSaveFormula.Enabled(False)
+	Gui.F_ExpenseRpt.cmdNegative.Enabled(False)
+	F.Intrinsic.Control.If(V.Local.bExist,=,True)
+		Gui.F_ExpenseRpt.cmdRowSum.Enabled(False)
+	F.Intrinsic.Control.Else
+		Gui.F_ExpenseRpt.cmdRowSum.Enabled(True)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.ElseIf(V.Local.sCheck.Trim,=,"*")
+	Gui.F_ExpenseRpt.ddlOp.Enabled(False)
+	F.Intrinsic.Control.If(V.Global.iBracket,=,0)
+		Gui.F_ExpenseRpt.cmdP1.Enabled(True)
+		Gui.F_ExpenseRpt.cmdP2.Enabled(False)
+	F.Intrinsic.Control.Else
+		Gui.F_ExpenseRpt.cmdP1.Enabled(False)
+		Gui.F_ExpenseRpt.cmdP2.Enabled(True)
+	F.Intrinsic.Control.EndIf
+	Gui.F_ExpenseRpt.txtConstant.Enabled(True)
+	Gui.F_ExpenseRpt.cmdAddGL.Enabled(True)
+	Gui.F_ExpenseRpt.cmdSaveFormula.Enabled(False)
+	Gui.F_ExpenseRpt.cmdNegative.Enabled(False)
+	F.Intrinsic.Control.If(V.Local.bExist,=,True)
+		Gui.F_ExpenseRpt.cmdRowSum.Enabled(False)
+	F.Intrinsic.Control.Else
+		Gui.F_ExpenseRpt.cmdRowSum.Enabled(True)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.ElseIf(V.Local.sCheck.Trim,=,"/")
+	Gui.F_ExpenseRpt.ddlOp.Enabled(False)
+	F.Intrinsic.Control.If(V.Global.iBracket,=,0)
+		Gui.F_ExpenseRpt.cmdP1.Enabled(True)
+		Gui.F_ExpenseRpt.cmdP2.Enabled(False)
+	F.Intrinsic.Control.Else
+		Gui.F_ExpenseRpt.cmdP1.Enabled(False)
+		Gui.F_ExpenseRpt.cmdP2.Enabled(True)
+	F.Intrinsic.Control.EndIf
+	Gui.F_ExpenseRpt.txtConstant.Enabled(True)
+	Gui.F_ExpenseRpt.cmdAddGL.Enabled(True)
+	Gui.F_ExpenseRpt.cmdSaveFormula.Enabled(False)
+	Gui.F_ExpenseRpt.cmdNegative.Enabled(False)
+	F.Intrinsic.Control.If(V.Local.bExist,=,True)
+		Gui.F_ExpenseRpt.cmdRowSum.Enabled(False)
+	F.Intrinsic.Control.Else
+		Gui.F_ExpenseRpt.cmdRowSum.Enabled(True)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.String.Mid(V.Global.sDtColumn,4,V.Local.sCheck)
+F.Intrinsic.Control.If(V.Local.sCheck,=,"1")
+	Gui.F_ExpenseRpt.cmdRowSum.Enabled(False)
+F.Intrinsic.Control.ElseIf(V.Local.sCheck,=,"2")
+	Gui.F_ExpenseRpt.cmdRowSum.Enabled(False)
+F.Intrinsic.Control.EndIf
+Program.Sub.CheckFormula.End
+
+Program.Sub.AddGLFormula.Start
+V.Local.iWidths.Declare
+V.Local.sFormula.Declare
+V.Local.sRet.Declare
+V.Local.sTitles.Declare
+
+F.Intrinsic.String.Split("GL Account*!*Description*!*Extra Description 1*!*Extra Description 2*!*Extra Description 3","*!*",V.Local.sTitles)
+F.Intrinsic.String.Split("1600*!*3000*!*2500*!*2500*!*2500","*!*",V.Local.iWidths)
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+F.Intrinsic.UI.Browser("Select a GL Account","conx","select gl_account, descr, user_1, user_2, user_3 from v_gl_master order by gl_account",V.Local.sTitles,V.Local.iWidths,12500,10000,V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	V.Local.sFormula.Set(V.Screen.F_ExpenseRpt!txtFormula.Text)
+	F.Intrinsic.String.Build("{0}[{1}]",V.Local.sFormula.Trim,V.Local.sRet(0).Trim,V.Local.sFormula)
+	F.Intrinsic.String.Build("{0}|[{1}]",V.Global.sFormula.Trim,V.Local.sRet(0).Trim,V.Global.sFormula)
+	Gui.F_ExpenseRpt.txtFormula.Text(V.Local.sFormula.Trim)
+	F.Intrinsic.Control.CallSub(checkformula)
+F.Intrinsic.Control.EndIf
+Program.Sub.AddGLFormula.End
+
+Program.Sub.AddConstantFormula.Start
+V.Local.sConstant.Declare
+V.Local.sFormula.Declare
+
+V.Local.sConstant.Set(V.Screen.F_ExpenseRpt!txtConstant.Text)
+F.Intrinsic.Control.If(V.Local.sConstant.Trim,<>,"")
+	V.Local.sFormula.Set(V.Screen.F_ExpenseRpt!txtFormula.Text)
+	F.Intrinsic.String.Build("{0}<{1}>",V.Local.sFormula.Trim,V.Local.sConstant.Trim,V.Local.sFormula)
+	F.Intrinsic.String.Build("{0}|<{1}>",V.Global.sFormula.Trim,V.Local.sConstant.Trim,V.Global.sFormula)
+	Gui.F_ExpenseRpt.txtFormula.Text(V.Local.sFormula.Trim)
+	F.Intrinsic.Control.CallSub(checkformula)
+	Gui.F_ExpenseRpt.txtConstant.Text("")
+F.Intrinsic.Control.EndIf
+Program.Sub.AddConstantFormula.End
+
+Program.Sub.AddOperatorFormula.Start
+V.Local.sFormula.Declare
+V.Local.sOp.Declare
+
+V.Local.sOp.Set(V.Screen.F_ExpenseRpt!ddlOp.Text)
+V.Local.sFormula.Set(V.Screen.F_ExpenseRpt!txtFormula.Text)
+F.Intrinsic.String.Build("{0}{1}",V.Local.sFormula.Trim,V.Local.sOp.Trim,V.Local.sFormula)
+F.Intrinsic.String.Build("{0}|{1}",V.Global.sFormula.Trim,V.Local.sOp.Trim,V.Global.sFormula)
+Gui.F_ExpenseRpt.txtFormula.Text(V.Local.sFormula.Trim)
+F.Intrinsic.Control.CallSub(checkformula)
+Program.Sub.AddOperatorFormula.End
+
+Program.Sub.AddOpenParantheses.Start
+V.Local.sFormula.Declare
+V.Local.sOp.Declare
+
+V.Local.sFormula.Set(V.Screen.F_ExpenseRpt!txtFormula.Text)
+F.Intrinsic.String.Concat(V.Local.sFormula.Trim,"(",V.Local.sFormula)
+F.Intrinsic.String.Concat(V.Global.sFormula.Trim,"|(",V.Global.sFormula)
+Gui.F_ExpenseRpt.txtFormula.Text(V.Local.sFormula.Trim)
+V.Global.iBracket.Set(1)
+F.Intrinsic.Control.CallSub(checkformula)
+Gui.F_ExpenseRpt.cmdSaveFormula.Enabled(False)
+Program.Sub.AddOpenParantheses.End
+
+Program.Sub.AddCloseParantheses.Start
+V.Local.sFormula.Declare
+V.Local.sOp.Declare
+
+V.Local.sFormula.Set(V.Screen.F_ExpenseRpt!txtFormula.Text)
+F.Intrinsic.String.Concat(V.Local.sFormula.Trim,")",V.Local.sFormula)
+F.Intrinsic.String.Concat(V.Global.sFormula.Trim,"|)",V.Global.sFormula)
+Gui.F_ExpenseRpt.txtFormula.Text(V.Local.sFormula.Trim)
+V.Global.iBracket.Set(0)
+F.Intrinsic.Control.CallSub(checkformula)
+Gui.F_ExpenseRpt.cmdSaveFormula.Enabled(True)
+Program.Sub.AddCloseParantheses.End
+
+Program.Sub.DeleteFormula.Start
+V.Local.i1.Declare
+V.Local.iEnd.Declare
+V.Local.sFormula.Declare
+V.Local.sSplit.Declare
+
+F.Intrinsic.String.Split(V.Global.sFormula,"|",V.Local.sSplit)
+F.Intrinsic.Control.If(V.Local.sSplit.UBound,>,0)
+	V.Global.sFormula.Set(V.Local.sSplit(0).Trim)
+	V.Local.sFormula.Set(V.Local.sSplit(0).Trim)
+	F.Intrinsic.Math.Sub(V.Local.sSplit.UBound,1,V.Local.iEnd)
+	F.Intrinsic.Control.For(V.Local.i1,1,V.Local.iEnd,1)
+		F.Intrinsic.String.Build("{0}|{1}",V.Global.sFormula.Trim,V.Local.sSplit(V.Local.i1).Trim,V.Global.sFormula)
+		F.Intrinsic.String.Build("{0}{1}",V.Local.sFormula.Trim,V.Local.sSplit(V.Local.i1).Trim,V.Local.sFormula)
+	F.Intrinsic.Control.Next(V.Local.i1)
+	Gui.F_ExpenseRpt.txtFormula.Text(V.Local.sFormula.Trim)
+	F.Intrinsic.Control.CallSub(checkformula)
+F.Intrinsic.Control.EndIf
+Program.Sub.DeleteFormula.End
+
+Program.Sub.SaveFormula.Start
+V.Local.sCheck.Declare
+
+F.Intrinsic.String.Right(V.Global.sFormula.Trim,1,V.Local.sCheck)
+F.Intrinsic.Control.If(V.Local.sCheck.Trim,<>,"+")
+F.Intrinsic.Control.AndIf(V.Local.sCheck.Trim,<>,"-")
+F.Intrinsic.Control.AndIf(V.Local.sCheck.Trim,<>,"*")
+F.Intrinsic.Control.AndIf(V.Local.sCheck.Trim,<>,"/")
+F.Intrinsic.Control.AndIf(V.Global.iBracket,=,0)
+	F.Intrinsic.Control.If(V.Global.sFormula.Trim,<>,"=")
+		F.Data.DataTable.SetValue("dtGrid",V.Global.iR,V.Global.sDtColumn,V.Global.sFormula)
+	F.Intrinsic.Control.EndIf
+	Gui.F_ExpenseRpt.frmFormula.Visible(False)
+	Gui.F_ExpenseRpt.ddlOp.ClearItems
+	Gui.F_ExpenseRpt.ddlOp.AddItem("+")
+	Gui.F_ExpenseRpt.ddlOp.AddItem("-")
+	Gui.F_ExpenseRpt.ddlOp.AddItem("*")
+	Gui.F_ExpenseRpt.ddlOp.AddItem("/")
+F.Intrinsic.Control.EndIf
+Program.Sub.SaveFormula.End
+
+Program.Sub.SwitchRow.Start
+V.Local.i1.Declare
+V.Local.iColumn.Declare
+V.Local.sColumn.Declare
+V.Local.sRow1.Declare
+V.Local.sRow2.Declare
+V.Local.sRows.Declare
+
+Gui.F_ExpenseRpt.GsGCSetup.GetSelectedRows("gvGrid",V.Local.sRows)
+F.Intrinsic.String.Split(V.Local.sRows,"*!*",V.Local.sRows)
+F.Intrinsic.Control.If(V.Local.sRows.UBound,=,1)
+	'Only process the switch if 2 rows are selected
+	'Get selected grid values
+	Gui.F_ExpenseRpt.GsGCSetup.GetRowValues("gvGrid",V.Local.sRows(0),V.Local.sRow1)
+	F.Intrinsic.String.Split(V.Local.sRow1,"*!*",V.Local.sRow1)
+	Gui.F_ExpenseRpt.GsGCSetup.GetRowValues("gvGrid",V.Local.sRows(1),V.Local.sRow2)
+	F.Intrinsic.String.Split(V.Local.sRow2,"*!*",V.Local.sRow2)
+	
+	F.Data.DataTable.SetValue("dtGrid",V.Local.sRows(0),"Title",V.Local.sRow2(1).Trim)
+	F.Intrinsic.Control.For(V.Local.i1,2,V.Local.sRow2.UBound,1)
+		F.Intrinsic.Math.Sub(V.Local.i1,1,V.Local.iColumn)
+		F.Intrinsic.String.Concat("Col",V.Local.iColumn,V.Local.sColumn)
+		F.Data.DataTable.SetValue("dtGrid",V.Local.sRows(0),V.Local.sColumn.Trim,V.Local.sRow2(V.Local.i1))
+	F.Intrinsic.Control.Next(V.Local.i1)
+	
+	F.Data.DataTable.SetValue("dtGrid",V.Local.sRows(1),"Title",V.Local.sRow1(1).Trim)
+	F.Intrinsic.Control.For(V.Local.i1,2,V.Local.sRow1.UBound,1)
+		F.Intrinsic.Math.Sub(V.Local.i1,1,V.Local.iColumn)
+		F.Intrinsic.String.Concat("Col",V.Local.iColumn,V.Local.sColumn)
+		F.Data.DataTable.SetValue("dtGrid",V.Local.sRows(1),V.Local.sColumn.Trim,V.Local.sRow1(V.Local.i1))
+	F.Intrinsic.Control.Next(V.Local.i1)
+F.Intrinsic.Control.EndIf
+Program.Sub.SwitchRow.End
+
+Program.Sub.SaveSetup.Start
+V.Local.bChange.Declare
+V.Local.i1.Declare
+V.Local.i2.Declare
+V.Local.iColumn.Declare
+V.Local.iIndex.Declare
+V.Local.sDatetime.Declare
+V.Local.sGL.Declare
+V.Local.sSQL.Declare
+V.Local.sTitle.Declare
+V.Local.sUserID.Declare
+
+V.Local.sTitle.Set(V.Screen.F_ExpenseRpt!txtTitle.Text)
+F.Intrinsic.Control.If(V.Local.sTitle.Trim,=,"")
+	F.Intrinsic.UI.Msgbox("Please enter a Title prior to saving","INA_EXPENSE_RPT_SETUP")
+F.Intrinsic.Control.ElseIf(V.Global.iColumn,=,0)
+	F.Intrinsic.UI.Msgbox("Report should have at least 1 column","INA_EXPENSE_RPT_SETUP")
+F.Intrinsic.Control.Else
+	Gui.F_ExpenseRpt..Enabled(False)
+	F.Intrinsic.UI.InvokeWaitDialog("Saving report header info","INA_EXPENSE_RPT_SETUP")
+	V.Local.sUserID.Set(V.Caller.User)
+	F.Intrinsic.String.Format(V.Ambient.Now,"YYYY-MM-DD HH:NN:SS",V.Local.sDatetime)
+	'Storing expense report header
+	F.Intrinsic.String.Build("select * from INA_EXPENSE_RPT_HEAD where id = {0}",V.Global.iID,V.Local.sSQL)
+	F.ODBC.Connection!conx.OpenLocalRecordsetRW("rst",V.Local.sSQL)
+	F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,True)
+		F.ODBC.conx!rst.AddNew
+		F.ODBC.conx!rst.Set!ID(V.Global.iID)
+		F.ODBC.conx!rst.Set!USER_CREATE(V.Local.sUserID.Trim)
+		F.ODBC.conx!rst.Set!DATE_CREATE(V.Local.sDatetime.Trim)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.ODBC.conx!rst.FieldValLong!TOTAL_COLS,<>,V.Global.iColumn)
+			V.Local.bChange.Set(True)
+		F.Intrinsic.Control.Else
+			V.Local.bChange.Set(False)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conx!rst.Set!RPT_NAME(V.Local.sTitle.Trim)
+	F.ODBC.conx!rst.Set!TOTAL_COLS(V.Global.iColumn)
+	F.ODBC.conx!rst.Set!USER_UPDATE(V.Local.sUserID.Trim)
+	F.ODBC.conx!rst.Set!DATE_UPDATE(V.Local.sDatetime.Trim)
+	F.ODBC.conx!rst.Update
+	F.ODBC.conx!rst.Close
+	'Storing expense report column header info
+	F.Intrinsic.UI.ChangeWaitStatus("Saving column header info")
+	F.Intrinsic.Control.If(V.Local.bChange,=,True)
+		F.Intrinsic.String.Build("delete from INA_EXPENSE_RPT_COLS where rpt_id = {0}",V.Global.iID,V.Local.sSQL)
+		F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+	F.Intrinsic.Control.endif
+	F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtColumn.RowCount--,1)
+		F.Intrinsic.String.Build("select * from INA_EXPENSE_RPT_COLS where rpt_id = {0} and col_no = {1}",V.Global.iID,V.DataTable.dtColumn(V.Local.i1).Col!FieldValLong,V.Local.sSQL)
+		F.ODBC.Connection!conx.OpenLocalRecordsetRW("rst",V.Local.sSQL)
+		F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,True)
+			F.Intrinsic.String.Build("insert into INA_EXPENSE_RPT_COLS(rpt_id,col_no,col_name,col_flag) values({0},{1},'{2}',{3});",V.Global.iID,V.DataTable.dtColumn(V.Local.i1).Col!FieldVal,V.DataTable.dtColumn(V.Local.i1).Value!FieldValTrim,V.DataTable.dtColumn(V.Local.i1).Flag!FieldVal,V.Local.sSQL)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("update INA_EXPENSE_RPT_COLS set col_name = '{2}', col_flag = {3} where rpt_id = {0} and col_no = {1};",V.Global.iID,V.DataTable.dtColumn(V.Local.i1).Col!FieldVal,V.DataTable.dtColumn(V.Local.i1).Value!FieldValTrim,V.DataTable.dtColumn(V.Local.i1).Flag!FieldVal,V.Local.sSQL)
+'			F.ODBC.conx!rst.AddNew
+'			F.ODBC.conx!rst.Set!RPT_ID(V.Global.iID)
+'			F.ODBC.conx!rst.Set!COL_NO(V.DataTable.dtColumn(V.Local.i1).Col!FieldValLong)
+		F.Intrinsic.Control.EndIf
+		F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+'		F.ODBC.conx!rst.Set!COL_NAME(V.DataTable.dtColumn(V.Local.i1).Value!FieldValTrim)
+'		F.ODBC.conx!rst.Set!COL_FLAG(V.DataTable.dtColumn(V.Local.i1).Flag!FieldVal)
+'		F.ODBC.conx!rst.Update
+		F.ODBC.conx!rst.Close
+	F.Intrinsic.Control.Next(V.Local.i1)
+	'Storing expense report row titles
+	F.Intrinsic.UI.ChangeWaitStatus("Saving row title info")
+	F.Intrinsic.Control.If(V.Local.bChange,=,True)
+		F.Intrinsic.String.Build("delete from INA_EXPENSE_RPT_ROWS where rpt_id = {0}",V.Global.iID,V.Local.sSQL)
+		F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+	F.Intrinsic.Control.endif
+	F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtGrid.RowCount--,1)
+		F.Intrinsic.Control.If(V.DataTable.dtGrid(V.Local.i1).Title!FieldValTrim,<>,"")
+			F.Intrinsic.String.Build("select * from INA_EXPENSE_RPT_ROWS where rpt_id = {0} and row_no = {1} and col_no = 0",V.Global.iID,V.DataTable.dtGrid(V.Local.i1).No!FieldValLong,V.Local.sSQL)
+			F.ODBC.Connection!conx.OpenLocalRecordsetRW("rst",V.Local.sSQL)
+			F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,True)
+				F.ODBC.conx!rst.AddNew
+				F.ODBC.conx!rst.Set!RPT_ID(V.Global.iID)
+				F.ODBC.conx!rst.Set!ROW_NO(V.DataTable.dtGrid(V.Local.i1).No!FieldValLong)
+				F.ODBC.conx!rst.Set!COL_NO(0)
+			F.Intrinsic.Control.EndIf
+			F.ODBC.conx!rst.Set!COL_VALUE(V.DataTable.dtGrid(V.Local.i1).Title!FieldValTrim)
+			F.ODBC.conx!rst.Update
+			F.ODBC.conx!rst.Close
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.i1)
+	'Storing expense report cell values
+	F.Intrinsic.UI.ChangeWaitStatus("Saving GL Account and/ or formula info")
+	V.Local.iColumn.Set(V.Screen.F_ExpenseRpt!txtColumn.Text)
+	F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtGrid.RowCount--,1)
+		F.Intrinsic.Control.If(V.DataTable.dtGrid(V.Local.i1).Title!FieldValTrim,<>,"")
+			F.Intrinsic.Control.For(V.Local.i2,1,V.Local.iColumn,1)
+				F.Intrinsic.Math.Add(V.Local.i2,1,V.Local.iIndex)
+				Gui.F_ExpenseRpt.GsGCSetup.GetCellValue("gvGrid",V.Local.iIndex,V.Local.i1,V.Local.sGL)
+				F.Intrinsic.String.Build("select * from INA_EXPENSE_RPT_ROWS where rpt_id = {0} and row_no = {1} and col_no = {2}",V.Global.iID,V.DataTable.dtGrid(V.Local.i1).No!FieldValLong,V.Local.i2,V.Local.sSQL)
+				F.ODBC.Connection!conx.OpenLocalRecordsetRW("rst",V.Local.sSQL)
+				F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,True)
+					F.ODBC.conx!rst.AddNew
+					F.ODBC.conx!rst.Set!RPT_ID(V.Global.iID)
+					F.ODBC.conx!rst.Set!ROW_NO(V.DataTable.dtGrid(V.Local.i1).No!FieldValLong)
+					F.ODBC.conx!rst.Set!COL_NO(V.Local.i2)
+				F.Intrinsic.Control.EndIf
+				F.ODBC.conx!rst.Set!COL_VALUE(V.Local.sGL.Trim)
+				F.ODBC.conx!rst.Update
+				F.ODBC.conx!rst.Close
+			F.Intrinsic.Control.Next(V.Local.i2)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.i1)
+	F.Intrinsic.Control.CallSub(clearscreen)
+	F.Intrinsic.UI.CloseWaitDialog
+	Gui.F_ExpenseRpt..Enabled(True)
+	Gui.F_ExpenseRpt..Visible(False)
+	Gui.F_ExpenseRpt..Visible(True)
+F.Intrinsic.Control.EndIf
+Program.Sub.SaveSetup.End
+
+Program.Sub.ClearScreen.Start
+V.Local.i1.Declare
+Gui.F_ExpenseRpt.txtTitle.Text("")
+Gui.F_ExpenseRpt.txtColumn.Text("")
+Gui.F_ExpenseRpt.frame1.Visible(False)
+V.Global.sFormula.Set("=")
+F.Intrinsic.Control.For(V.Local.i1,V.DataTable.dtGrid.RowCount--,0,-1)
+	F.Data.DataTable.DeleteRow("dtGrid",V.Local.i1)
+F.Intrinsic.Control.Next(V.Local.i1)
+F.Intrinsic.Control.For(V.Local.i1,V.DataTable.dtColumn.RowCount--,0,-1)
+	F.Data.DataTable.DeleteRow("dtColumn",V.Local.i1)
+F.Intrinsic.Control.Next(V.Local.i1)
+F.ODBC.Connection!conx.ExecuteAndReturn("SELECT TOP 1 ID FROM INA_EXPENSE_RPT_HEAD ORDER BY ID DESC",V.Global.iID)
+F.Intrinsic.Math.Add(V.Global.iID,1,V.Global.iID)
+V.Global.iColumn.Set(0)
+Program.Sub.ClearScreen.End
+
+Program.Sub.ChangeNegativeValue.Start
+V.Local.i1.Declare
+V.Local.iEnd.Declare
+V.Local.sCheck.Declare
+V.Local.sFormula.Declare
+V.Local.sSplit.Declare
+V.Local.sValue.Declare
+
+F.Intrinsic.String.Split(V.Global.sFormula,"|",V.Local.sSplit)
+V.Local.sValue.Set(V.Local.sSplit(V.Local.sSplit.UBound).Trim)
+F.Intrinsic.String.Left(V.Local.sValue,2,V.Local.sCheck)
+F.Intrinsic.Control.If(V.Local.sCheck.Trim,=,"[!")
+	'Changing negative GL to positive GL
+	F.Intrinsic.String.Replace(V.Local.sValue,"[!","[",V.Local.sValue)
+	F.Intrinsic.String.Replace(V.Local.sValue,"!]","]",V.Local.sValue)
+F.Intrinsic.Control.ElseIf(V.Local.sCheck.Trim,=,"<!")
+	'Changing negative constant to positive constant
+	F.Intrinsic.String.Replace(V.Local.sValue,"<!","<",V.Local.sValue)
+	F.Intrinsic.String.Replace(V.Local.sValue,"!>",">",V.Local.sValue)
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Left(V.Local.sCheck,1,V.Local.sCheck)
+	F.Intrinsic.Control.If(V.Local.sCheck.Trim,=,"[")
+		'Changing positive GL to negative GL
+		F.Intrinsic.String.Replace(V.Local.sValue,"[","[!",V.Local.sValue)
+		F.Intrinsic.String.Replace(V.Local.sValue,"]","!]",V.Local.sValue)
+	F.Intrinsic.Control.ElseIf(V.Local.sCheck.Trim,=,"<")
+		'Changing positive constant to negative constant
+		F.Intrinsic.String.Replace(V.Local.sValue,"<","<!",V.Local.sValue)
+		F.Intrinsic.String.Replace(V.Local.sValue,">","!>",V.Local.sValue)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.Local.sSplit.UBound,>,0)
+	V.Global.sFormula.Set(V.Local.sSplit(0).Trim)
+	V.Local.sFormula.Set(V.Local.sSplit(0).Trim)
+	F.Intrinsic.Control.For(V.Local.i1,1,V.Local.sSplit.UBound,1)
+		F.Intrinsic.Control.If(V.Local.i1,=,V.Local.sSplit.UBound)
+			F.Intrinsic.String.Build("{0}|{1}",V.Global.sFormula.Trim,V.Local.sValue.Trim,V.Global.sFormula)
+			F.Intrinsic.String.Build("{0}{1}",V.Local.sFormula.Trim,V.Local.sValue.Trim,V.Local.sFormula)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("{0}|{1}",V.Global.sFormula.Trim,V.Local.sSplit(V.Local.i1).Trim,V.Global.sFormula)
+			F.Intrinsic.String.Build("{0}{1}",V.Local.sFormula.Trim,V.Local.sSplit(V.Local.i1).Trim,V.Local.sFormula)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.i1)
+	Gui.F_ExpenseRpt.txtFormula.Text(V.Local.sFormula.Trim)
+	F.Intrinsic.Control.CallSub(checkformula)
+F.Intrinsic.Control.EndIf
+Program.Sub.ChangeNegativeValue.End
+
+Program.Sub.BrowseRpt.Start
+V.Local.iWidths.Declare
+V.Local.sRet.Declare
+V.Local.sTitles.Declare
+F.Intrinsic.String.Split("ID*!*Report Name*!*Total Column*!*Creator","*!*",V.Local.sTitles)
+F.Intrinsic.String.Split("500*!*2500*!*1000*!*1000","*!*",V.Local.iWidths)
+
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+F.Intrinsic.UI.Browser("Select a Report","conx","select id, rpt_name, total_cols, user_create from ina_expense_rpt_head order by id",V.Local.sTitles,V.Local.iWidths,16000,10000,V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	V.Global.iID.Set(V.Local.sRet(0))
+	Gui.F_ExpenseRpt.txtTitle.Text(V.Local.sRet(1).Trim)
+	Gui.F_ExpenseRpt.txtColumn.Text(V.Local.sRet(2))
+	F.Intrinsic.Control.CallSub(entertotalcolumn)
+F.Intrinsic.Control.EndIf
+Program.Sub.BrowseRpt.End
+
+Program.Sub.SelectRowSUM.Start
+V.Local.sFormula.Declare
+V.Local.sSum.Declare
+
+V.Local.sSum.Set("#RSUM#")
+V.Local.sFormula.Set(V.Screen.F_ExpenseRpt!txtFormula.Text)
+F.Intrinsic.String.Build("{0}{1}",V.Local.sFormula.Trim,V.Local.sSum.Trim,V.Local.sFormula)
+F.Intrinsic.String.Build("{0}|{1}",V.Global.sFormula.Trim,V.Local.sSum.Trim,V.Global.sFormula)
+Gui.F_ExpenseRpt.txtFormula.Text(V.Local.sFormula.Trim)
+F.Intrinsic.Control.CallSub(checkformula)
+Program.Sub.SelectRowSUM.End
+
+Program.Sub.gvCol_ChangeValue.Start
+V.Local.iColumn.Declare
+V.Local.iFlag.Declare
+V.Local.sColumn.Declare
+V.Local.sFilter.Declare
+V.Local.sRet.Declare
+V.Local.sValue.Declare
+
+F.Intrinsic.Control.If(V.Args.Column,=,"Value")
+	V.Local.iColumn.Set(V.DataTable.dtColumn(V.Args.RowIndex).Col!FieldValLong)
+	V.Local.sValue.Set(V.Args.Value)
+	F.Intrinsic.String.Left(V.Local.sValue,90,V.Local.sValue)
+	F.Intrinsic.String.Concat("Col",V.Local.iColumn,V.Local.sColumn)
+	Gui.F_ExpenseRpt.GsGCSetup.SetColumnProperty("gvGrid",V.Local.sColumn.Trim,"Caption",V.Local.sValue)
+	F.Data.DataTable.SetValue("dtColumn",V.Args.RowIndex,"Value",V.Local.sValue)
+F.Intrinsic.Control.ElseIf(V.Args.Column,=,"Formula")
+	F.Intrinsic.Control.If(V.Args.Value,=,False)
+		F.Data.DataTable.SetValue("dtColumn",V.Args.RowIndex,"Flag",0)
+	F.Intrinsic.Control.Else
+		F.Data.DataTable.SetValue("dtColumn",V.Args.RowIndex,"Flag",1)
+	F.Intrinsic.Control.EndIf
+	V.Local.iColumn.Set(V.DataTable.dtColumn(V.Args.RowIndex).Col!FieldValLong)
+	F.Intrinsic.String.Concat("Col",V.Local.iColumn,V.Local.sColumn)
+	F.Data.DataTable.SetValue("dtGrid",-1,V.Local.sColumn,"")
+F.Intrinsic.Control.EndIf
+Program.Sub.gvCol_ChangeValue.End
+
+Program.Sub.Comments.Start
+${$0$}$Expense Cost Center Report Setup$}$MHERTANTO$}$20/6/2017 5:15:01 AM$}$False
+${$3$}$0$}$$}$0$}$-1$}$$}$12:00:00 AM$}$This program is the setup for expense cost center report where user can create his/her own financial reporting for management.
+
+An ideal way to use this program is to have the GL account to be split among departments or business units. Usually the column titles would be the departments or business units and the row titles would be the main ledger descriptions. Every cell on the grid needs to be set as a GL account or a formula where in a formula, a combination of subtotal of a GL account, constant values, and mathematical operators can be applied.
+Program.Sub.Comments.End
